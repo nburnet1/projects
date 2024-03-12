@@ -1,0 +1,205 @@
+{
+  "custom": {},
+  "params": {
+    "data": [],
+    "rowIndex": 0,
+    "tagPath": ""
+  },
+  "propConfig": {
+    "params.changesMade": {
+      "paramDirection": "inout",
+      "persistent": false
+    },
+    "params.data": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.rowIndex": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tself.view.params.changesMade \u003d False"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Button"
+        },
+        "position": {
+          "basis": "96px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.changesMade"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/undo"
+            }
+          },
+          "style": {
+            "margin": 10
+          },
+          "text": "Revert"
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\trowIndex \u003d self.view.params.rowIndex\n\tif rowIndex \u003e\u003d 0:\n\t\tself.view.params.data \u003d system.dataset.deleteRow(self.view.params.data, rowIndex)\n\t\tself.view.params.changesMade \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "del_row"
+        },
+        "position": {
+          "basis": "114px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.enabled": {
+            "persistent": true
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/remove"
+            }
+          },
+          "primary": false,
+          "style": {
+            "classes": "Kanoa/Button/red",
+            "margin": 10
+          },
+          "text": "Delete Row",
+          "textStyle": {
+            "classes": "Kanoa/Button/red"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tdata \u003d self.view.params.data\n\ttempList \u003d [\"\"] * self.view.params.data.getColumnCount()\n\tif self.view.params.rowIndex is None:\n\t\tnewData \u003d system.dataset.addRow(data, tempList)\n\telse:\n\t\tnewData \u003d system.dataset.addRow(data, self.view.params.rowIndex+1, tempList)\n\t\tself.view.params.rowIndex +\u003d 1\n\t\t\n\tself.view.params.data \u003d newData\n\tself.view.params.changesMade \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "add_row"
+        },
+        "position": {
+          "basis": "96px",
+          "shrink": 0
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/add"
+            },
+            "style": {
+              "margin": 5
+            }
+          },
+          "primary": false,
+          "style": {
+            "classes": "Kanoa/Button/green",
+            "margin": 10
+          },
+          "text": "Add Row",
+          "textStyle": {
+            "classes": "Kanoa/Button/green Kanoa/Button/Text"
+          }
+        },
+        "type": "ia.input.button"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tif self.view.params.tagPath:\n\t\tsystem.tag.writeBlocking(self.view.params.tagPath, self.view.params.data)\n\t\tself.view.params.changesMade \u003d False"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "save"
+        },
+        "position": {
+          "basis": "96px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "view.params.changesMade"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "margin": 10
+          },
+          "text": "Save to Tag"
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "justify": "flex-end",
+      "style": {
+        "overflow": "hidden",
+        "padding": 0
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

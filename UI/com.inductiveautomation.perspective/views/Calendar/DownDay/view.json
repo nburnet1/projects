@@ -1,0 +1,207 @@
+{
+  "custom": {
+    "isSelected": false,
+    "isToday": false
+  },
+  "params": {
+    "date": 1561648040977,
+    "inMonth": false,
+    "isDownDay": false,
+    "selectedDate": 1561648040977,
+    "today": 1561648040977
+  },
+  "propConfig": {
+    "custom.isSelected": {
+      "binding": {
+        "config": {
+          "struct": {
+            "date": "{view.params.date}",
+            "selectedDate": "{view.params.selectedDate}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\tselectedDate \u003d system.date.fromMillis(value.selectedDate)\n\tdate \u003d system.date.fromMillis(value.date)\n\tisToday \u003d system.date.getYear(selectedDate) \u003d\u003d system.date.getYear(date) and \\\n\t\tsystem.date.getMonth(selectedDate) \u003d\u003d system.date.getMonth(date) and \\\n\t\tsystem.date.getDayOfMonth(selectedDate) \u003d\u003d system.date.getDayOfMonth(date)\n\treturn isToday\n",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.isToday": {
+      "binding": {
+        "config": {
+          "struct": {
+            "date": "{view.params.date}",
+            "today": "{view.params.today}"
+          },
+          "waitOnAll": true
+        },
+        "transforms": [
+          {
+            "code": "\ttoday \u003d system.date.fromMillis(value.today)\n\tdate \u003d system.date.fromMillis(value.date)\n\tisToday \u003d system.date.getYear(today) \u003d\u003d system.date.getYear(date) and \\\n\t\tsystem.date.getMonth(today) \u003d\u003d system.date.getMonth(date) and \\\n\t\tsystem.date.getDayOfMonth(today) \u003d\u003d system.date.getDayOfMonth(date)\n\treturn isToday",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.date": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.inMonth": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.isDownDay": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.selectedDate": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.today": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 136,
+      "width": 157
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Day"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.date"
+              },
+              "transforms": [
+                {
+                  "formatType": "datetime",
+                  "formatValue": "dd",
+                  "type": "format"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "1.5em"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "1em",
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.isDownDay}, \"Down Day\", \"\")"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "fontSize": "1em",
+            "fontWeight": "bold",
+            "lineHeight": "1em"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "events": {
+      "dom": {
+        "onClick": {
+          "config": {
+            "script": "\tsystem.perspective.sendMessage(\"calendar.dateClicked\", {\u0027date\u0027: self.view.params.date}, \"page\")"
+          },
+          "scope": "G",
+          "type": "script"
+        }
+      }
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.backgroundColor": {
+        "binding": {
+          "config": {
+            "struct": {
+              "inMonth": "{view.params.inMonth}",
+              "isDownDay": "{view.params.isDownDay}",
+              "isSelected": "{view.custom.isSelected}"
+            },
+            "waitOnAll": true
+          },
+          "transforms": [
+            {
+              "code": "\tif value.isSelected:\n\t\treturn \u0027rgba(0, 0, 255, 0.1)\u0027\n\tif value.isDownDay:\n\t\treturn \u0027rgba(100,40,50,.50)\u0027\n\tif value.inMonth:\n\t\treturn \u0027unset\u0027\n\treturn \u0027rgba(0, 0, 0, 0.1)\u0027",
+              "type": "script"
+            }
+          ],
+          "type": "expr-struct"
+        }
+      },
+      "props.style.border": {
+        "binding": {
+          "config": {
+            "path": "view.custom.isToday"
+          },
+          "transforms": [
+            {
+              "fallback": "1px solid gray",
+              "inputType": "scalar",
+              "mappings": [
+                {
+                  "input": true,
+                  "output": "2px solid blue"
+                }
+              ],
+              "outputType": "scalar",
+              "type": "map"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "overflow": "hidden",
+        "padding": "2px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

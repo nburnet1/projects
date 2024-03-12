@@ -1,0 +1,23 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#FFFFFF",
+      "borderWidth": "0px",
+      "color": " #0961B3 ",
+      "fontFamily": "Noto Sans",
+      "fontSize": "14px",
+      "fontWeight": "bolder",
+      "letterSpacing": "1.25",
+      "textAlign": "center",
+      "textTransform": "uppercase"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "backgroundColor": "#00D9D9"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "base": {
+    "style": {
+      "borderTopRightRadius": "12px",
+      "borderBottomRightRadius": "12px"
+    }
+  }
+}

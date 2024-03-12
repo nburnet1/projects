@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "fontFamily": "Inter",
+      "fontSize": "14px",
+      "fontWeight": "600"
+    }
+  }
+}

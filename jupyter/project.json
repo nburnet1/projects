@@ -1,0 +1,7 @@
+{
+  "title": "Jupyter Ignition Kernel",
+  "description": "Ignition kernel management for Jupyter  Lab/Notebook",
+  "parent": "Global",
+  "enabled": true,
+  "inheritable": false
+}

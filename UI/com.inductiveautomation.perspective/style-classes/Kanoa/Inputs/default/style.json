@@ -1,0 +1,28 @@
+{
+  "base": {
+    "style": {
+      "borderColor": "var(--kcInputBorder)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "borderTopLeftRadius": "2px",
+      "borderTopRightRadius": "2px",
+      "borderBottomLeftRadius": "2px",
+      "borderBottomRightRadius": "2px",
+      "outlineStyle": "none"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "hover",
+      "style": {
+        "borderColor": "var(--kcButton-BlueBorder)"
+      }
+    },
+    {
+      "pseudo": "focus",
+      "style": {
+        "borderColor": "var(--kcButton-BlueBorder)"
+      }
+    }
+  ]
+}

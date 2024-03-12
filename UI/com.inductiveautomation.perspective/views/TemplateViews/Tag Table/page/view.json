@@ -1,0 +1,293 @@
+{
+  "custom": {},
+  "params": {
+    "columnHeaders": [],
+    "display": {
+      "export": true,
+      "import": true
+    },
+    "tag": [],
+    "tagPath": "\"\""
+  },
+  "propConfig": {
+    "params.columnHeaders": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.display": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tag": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.tagPath": {
+      "onChange": {
+        "enabled": null,
+        "script": "\tself.getChild(\"root\").custom.changesMade \u003d False"
+      },
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "loading": {
+      "mode": "blocking"
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "TransferControls"
+        },
+        "position": {
+          "basis": "64px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.changesMade": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "parent.custom.changesMade"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.csvData": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "../Table.custom.data"
+              },
+              "type": "property"
+            },
+            "persistent": false
+          },
+          "props.params.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.display"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "TemplateViews/Tag Table/TransferControls"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "events": {
+          "component": {
+            "onEditCellCommit": {
+              "config": {
+                "script": "\trow \u003d event.row\n\tcol \u003d event.column\n\tdataSet \u003d self.props.data\n\t\n\tnewData \u003d system.dataset.setValue(dataSet, int(row), col, event.value)\n\t\n\tself.custom.data \u003d newData\n\t\n\tself.parent.custom.changesMade \u003d True"
+              },
+              "scope": "G",
+              "type": "script"
+            },
+            "onRowClick": {
+              "config": {
+                "script": "\timport java.util.Date\n\tcolumnName \u003d self.props.selection.selectedColumn\n\tcolumnIndex \u003d self.props.data.getColumnIndex(columnName)\n\tcolumnType \u003d self.props.data.getColumnType(columnIndex)\n\tif columnType \u003d\u003d java.util.Date:\n\t\tpayload \u003d {\n\t\t\t\"payload\":{\n\t\t\t\"tagPath\" : self.view.params.tagPath,\n\t\t\t\"column\" : self.props.selection.selectedColumn,\n\t\t\t\"row\" : event.rowIndex,\n\t\t\t\"dateTime\" : event.value\n\t\t\t}\n\t\t}\n\t\tsystem.perspective.openPopup(\"dateTime_\"+str(event.rowIndex)+\"_\"+str(self.props.selection.selectedColumn), \"TemplateViews/Tag Table/DateTimePopup\",payload,\"Select date\",modal\u003dTrue)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "contextMenu": {
+            "items": [
+              {
+                "children": [],
+                "icon": {
+                  "color": "",
+                  "path": "",
+                  "style": {}
+                },
+                "link": {
+                  "target": "self",
+                  "url": ""
+                },
+                "message": {
+                  "payload": {},
+                  "scope": "page",
+                  "type": ""
+                },
+                "method": {
+                  "name": "",
+                  "params": {}
+                },
+                "style": {
+                  "classes": ""
+                },
+                "text": "menu-item",
+                "type": "method"
+              }
+            ]
+          },
+          "name": "Table"
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 0
+        },
+        "propConfig": {
+          "custom.data": {
+            "binding": {
+              "config": {
+                "path": "view.params.tag"
+              },
+              "type": "property"
+            }
+          },
+          "props.columns": {
+            "binding": {
+              "config": {
+                "path": "view.params.columnHeaders"
+              },
+              "type": "property"
+            },
+            "persistent": false
+          },
+          "props.data": {
+            "binding": {
+              "config": {
+                "path": "this.custom.data"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "cells": {
+            "allowEditOn": "single-click"
+          },
+          "pager": {
+            "bottom": false
+          }
+        },
+        "scripts": {
+          "customMethods": [],
+          "extensionFunctions": null,
+          "messageHandlers": [
+            {
+              "messageType": "addDateTime",
+              "pageScope": true,
+              "script": "\tif self.view.params.tagPath \u003d\u003d payload[\"tagPath\"]:\n\t\tself.custom.data \u003d \\\n\t\tsystem.dataset.setValue(self.custom.data, payload[\"row\"], payload[\"column\"], payload[\"dateTime\"])\n\t\tself.parent.custom.changesMade \u003d True",
+              "sessionScope": false,
+              "viewScope": false
+            }
+          ]
+        },
+        "type": "ia.display.table"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "32px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "margin": 10
+          },
+          "textStyle": {
+            "textAlign": "end"
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "TableControls"
+        },
+        "position": {
+          "basis": "64px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.params.changesMade": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "parent.custom.changesMade"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.data": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "../Table.custom.data"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.rowIndex": {
+            "binding": {
+              "config": {
+                "bidirectional": true,
+                "path": "../Table.props.selection.selectedRow"
+              },
+              "type": "property"
+            }
+          },
+          "props.params.tagPath": {
+            "binding": {
+              "config": {
+                "path": "view.params.tagPath"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "path": "TemplateViews/Tag Table/TableControls"
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "custom": {
+      "changesMade": false
+    },
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.changesMade": {
+        "onChange": {
+          "enabled": null,
+          "script": "\tif currentValue.value \u003d\u003d False:\n\t\tself.getChild(\"Table\").custom.data \u003d self.view.params.tag\n\t\t"
+        }
+      }
+    },
+    "props": {
+      "direction": "column"
+    },
+    "type": "ia.container.flex"
+  }
+}

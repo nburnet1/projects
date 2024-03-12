@@ -1,0 +1,162 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 880,
+      "width": 1260
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Machine Table"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.columnHeaders": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.tag"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn tagToColumns.dataToColumns(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.tag": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[Temp_TP]Machines"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "display": {
+              "export": false,
+              "import": true
+            },
+            "tagPath": "[Temp_TP]Machines"
+          },
+          "path": "TemplateViews/Tag Table/page",
+          "style": {
+            "margin": 5
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Tank Table"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.columnHeaders": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.tag"
+              },
+              "transforms": [
+                {
+                  "code": "\tcolumnSchema \u003d {\n\t\t\"date\" : {\n\t\t\t\"editable\" : False\n\t\t},\n\t\t\"tankNo\": {\n\t\t\t\"editable\" : True\n\t\t}\n\t}\n\toverrideSchema \u003d {\n\t\t\"editable\" : False\n\t}\n\treturn tagToColumns.dataToColumns(value, columnSchema,overrideSchema)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.tag": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[Temp_TP]SomeTag"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "display": {
+              "export": true,
+              "import": false
+            },
+            "tagPath": "[Temp_TP]SomeTag"
+          },
+          "path": "TemplateViews/Tag Table/page",
+          "style": {
+            "margin": 5
+          }
+        },
+        "type": "ia.display.view"
+      },
+      {
+        "meta": {
+          "name": "Bool Table"
+        },
+        "position": {
+          "grow": 1
+        },
+        "propConfig": {
+          "props.params.columnHeaders": {
+            "binding": {
+              "config": {
+                "path": "this.props.params.tag"
+              },
+              "transforms": [
+                {
+                  "code": "\treturn tagToColumns.dataToColumns(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          },
+          "props.params.tag": {
+            "binding": {
+              "config": {
+                "fallbackDelay": 2.5,
+                "mode": "direct",
+                "tagPath": "[Temp_TP]csvTag"
+              },
+              "type": "tag"
+            }
+          }
+        },
+        "props": {
+          "params": {
+            "display": {
+              "export": true,
+              "import": true
+            },
+            "tagPath": "[Temp_TP]csvTag"
+          },
+          "path": "TemplateViews/Tag Table/page",
+          "style": {
+            "margin": 5
+          }
+        },
+        "type": "ia.display.view"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

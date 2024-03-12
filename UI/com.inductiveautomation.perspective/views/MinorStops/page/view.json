@@ -1,0 +1,38 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "position": {
+          "basis": "58px"
+        },
+        "props": {
+          "text": "Label"
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "meta": {
+          "name": "Progress"
+        },
+        "position": {
+          "basis": "64px"
+        },
+        "props": {
+          "max": 2,
+          "value": 0
+        },
+        "type": "ia.display.progress"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

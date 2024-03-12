@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "fontFamily": "Inter",
+      "fontSize": "12px",
+      "letterSpacing": "-0.1px"
+    }
+  }
+}

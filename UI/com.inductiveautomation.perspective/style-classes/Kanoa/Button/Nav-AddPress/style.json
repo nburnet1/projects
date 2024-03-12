@@ -1,0 +1,17 @@
+{
+  "base": {
+    "style": {
+      "borderStyle": "none",
+      "cursor": "pointer"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "active",
+      "style": {
+        "backgroundColor": "#35353526",
+        "fill": "#0099EC"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--kcButton-GreenBackground)",
+      "borderColor": "var(--kcGreen-60)",
+      "color": "var(--kcButton-GreenColor)"
+    }
+  }
+}

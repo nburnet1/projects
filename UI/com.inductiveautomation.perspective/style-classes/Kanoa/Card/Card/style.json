@@ -1,0 +1,14 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--kcCardBackground)",
+      "borderColor": "var(--kcCardBorder)",
+      "borderStyle": "solid",
+      "borderWidth": "1px",
+      "borderRadius": "8px",
+      "boxShadow": "var(--kcCardShadow)",
+      "margin": "0 3px 3px 0",
+      "padding": "5px"
+    }
+  }
+}

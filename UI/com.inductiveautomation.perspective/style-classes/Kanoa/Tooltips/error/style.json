@@ -1,0 +1,9 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "var(--kcTooltipBackground-Error)",
+      "borderColor": "var(--kcTooltipBorder-Error)",
+      "color": "var(--kcTooltipColorError)"
+    }
+  }
+}

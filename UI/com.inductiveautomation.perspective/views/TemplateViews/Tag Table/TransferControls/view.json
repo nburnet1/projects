@@ -1,0 +1,157 @@
+{
+  "custom": {},
+  "params": {
+    "changesMade": "",
+    "csvData": [],
+    "display": {
+      "export": true,
+      "import": true
+    }
+  },
+  "propConfig": {
+    "params.changesMade": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.csvData": {
+      "paramDirection": "inout",
+      "persistent": true
+    },
+    "params.display": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {},
+  "root": {
+    "children": [
+      {
+        "events": {
+          "component": {
+            "onFileReceived": {
+              "config": {
+                "script": "\tdataString \u003d event.file.getString()\n\tlogger \u003d system.util.getLogger(\"onUpload\")\n\tlogger.info(\"Upload File \" + str(dataString))\n\tif dataString:\n\t\tself.view.params.csvData \u003d system.dataset.fromCSV(dataString)\n\t\tself.view.params.changesMade \u003d True\n\t\t"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "FileUpload"
+        },
+        "position": {
+          "basis": "48px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.display.import"
+              },
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "fileUploadIcon": {
+            "color": "#0C7BB3",
+            "path": "material/vertical_align_bottom"
+          },
+          "style": {
+            "classes": "",
+            "margin": 10
+          },
+          "supportedFileTypes": [
+            "csv"
+          ]
+        },
+        "type": "ia.input.fileupload"
+      },
+      {
+        "meta": {
+          "name": "Label"
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "expression": "if({view.params.display.import} \u0026\u0026 {view.params.display.export}, \"Import/Export\", if({view.params.display.import},\"Import\", if({view.params.display.export},\"Export\", \"\")))"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "margin": 10
+          }
+        },
+        "type": "ia.display.label"
+      },
+      {
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "config": {
+                "script": "\tcsv \u003d system.dataset.toCSV(self.view.params.csvData, False, True)\n\tfileName \u003d \"table.csv\"\n\tsystem.perspective.download(fileName, csv)"
+              },
+              "scope": "G",
+              "type": "script"
+            }
+          }
+        },
+        "meta": {
+          "name": "Export",
+          "tooltip": {
+            "text": "Export"
+          }
+        },
+        "position": {
+          "basis": "48px",
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.params.display.export"
+              },
+              "type": "property"
+            }
+          },
+          "props.enabled": {
+            "binding": {
+              "config": {
+                "expression": "!{view.params.changesMade}"
+              },
+              "type": "expr"
+            }
+          }
+        },
+        "props": {
+          "image": {
+            "icon": {
+              "path": "material/vertical_align_top"
+            },
+            "position": "center",
+            "style": {
+              "margin": 5
+            }
+          },
+          "primary": false,
+          "style": {
+            "margin": 10
+          },
+          "text": ""
+        },
+        "type": "ia.input.button"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "type": "ia.container.flex"
+  }
+}

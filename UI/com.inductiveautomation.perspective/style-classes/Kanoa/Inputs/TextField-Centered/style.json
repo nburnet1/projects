@@ -1,0 +1,28 @@
+{
+  "base": {
+    "style": {
+      "fontSize": "8px",
+      "textAlign": "center !important"
+    }
+  },
+  "variants": [
+    {
+      "media": {
+        "feature": "minWidth",
+        "value": "480px"
+      },
+      "style": {
+        "fontSize": "15px"
+      }
+    },
+    {
+      "media": {
+        "feature": "minWidth",
+        "value": "996px"
+      },
+      "style": {
+        "fontSize": "17px"
+      }
+    }
+  ]
+}

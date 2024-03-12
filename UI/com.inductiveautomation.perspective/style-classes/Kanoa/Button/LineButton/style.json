@@ -1,0 +1,23 @@
+{
+  "base": {
+    "style": {
+      "backgroundColor": "#EEEEEE",
+      "borderBottomColor": "#EEEEEE",
+      "borderBottomStyle": "none",
+      "borderBottomWidth": "2.5px",
+      "borderLeftStyle": "none",
+      "borderTopLeftRadius": "0px",
+      "borderTopRightRadius": "0px",
+      "borderBottomLeftRadius": "5px",
+      "borderBottomRightRadius": "5px",
+      "borderRightStyle": "none",
+      "borderTopStyle": "none",
+      "color": "#606060",
+      "fontFamily": "Roboto",
+      "fontSize": "15px",
+      "fontWeight": "bold",
+      "textAlign": "center",
+      "textTransform": "uppercase"
+    }
+  }
+}

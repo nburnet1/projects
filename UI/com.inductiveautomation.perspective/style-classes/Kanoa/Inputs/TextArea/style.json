@@ -1,0 +1,18 @@
+{
+  "base": {
+    "style": {
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+      "textAlign": "left"
+    }
+  },
+  "variants": [
+    {
+      "pseudo": "disabled",
+      "style": {
+        "backgroundColor": "#D5D5D500",
+        "borderColor": "#D5D5D5"
+      }
+    }
+  ]
+}
