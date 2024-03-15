@@ -46,12 +46,6 @@
       "tagType": "AtomicTag"
     },
     {
-      "valueSource": "expr",
-      "expression": "12",
-      "name": "testgit",
-      "tagType": "AtomicTag"
-    },
-    {
       "valueSource": "memory",
       "dataType": "Int4",
       "name": "test_num",
