@@ -25,7 +25,9 @@ The tags directory contains the real-time tags for the entire gateway. In order 
 
 *Example:*
 Path: `.tags/Some_Tags/tags.json`
+
 Tag Provider: `Some_Tags`
+
 Backup: `tags.json`
 
 ### Projects
