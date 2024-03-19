@@ -316,6 +316,12 @@
           ]
         }
       ]
+    },
+    {
+      "valueSource": "memory",
+      "name": "vc_test",
+      "value": 1234,
+      "tagType": "AtomicTag"
     }
   ]
 }
