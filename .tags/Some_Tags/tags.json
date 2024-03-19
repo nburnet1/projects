@@ -119,6 +119,12 @@
       "tagType": "AtomicTag"
     },
     {
+      "valueSource": "memory",
+      "name": "vc_test",
+      "value": 1234,
+      "tagType": "AtomicTag"
+    },
+    {
       "name": "Testa",
       "tagType": "Folder",
       "tags": [
@@ -316,12 +322,6 @@
           ]
         }
       ]
-    },
-    {
-      "valueSource": "memory",
-      "name": "vc_test",
-      "value": 1234,
-      "tagType": "AtomicTag"
     }
   ]
 }
