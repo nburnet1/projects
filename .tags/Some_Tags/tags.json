@@ -3,6 +3,33 @@
   "tagType": "Provider",
   "tags": [
     {
+      "name": "fol1",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "aNewInstance",
+          "typeId": "TestType",
+          "parameters": {
+            "testParameter": {
+              "dataType": "Integer",
+              "value": 17
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "testInt",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "fol2",
+          "tagType": "Folder"
+        }
+      ]
+    },
+    {
       "valueSource": "expr",
       "expression": "now(1000)",
       "dataType": "DateTime",
@@ -25,55 +52,10 @@
       ]
     },
     {
-      "name": "Testa",
-      "tagType": "Folder",
-      "tags": [
-        {
-          "name": "Testa_embedded",
-          "tagType": "Folder",
-          "tags": [
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "testString",
-              "value": "Hey I am a String",
-              "tagType": "AtomicTag"
-            }
-          ]
-        },
-        {
-          "valueSource": "memory",
-          "dataType": "Int4",
-          "name": "basicNum",
-          "value": 1234,
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "Hey Folder",
-          "tagType": "Folder"
-        }
-      ]
-    },
-    {
-      "valueSource": "memory",
-      "dataType": "DataSet",
-      "name": "aDataSet",
-      "tagType": "AtomicTag"
-    },
-    {
-      "valueSource": "derived",
-      "deriveExpressionGetter": "{source} + 10",
-      "dataType": "Int4",
-      "deriveExpressionSetter": "{value} - 20",
-      "sourceTagPath": "[Sample_Tags]Ramp/Ramp1",
-      "name": "derivedTag",
-      "tagType": "AtomicTag"
-    },
-    {
       "valueSource": "memory",
       "dataType": "Int4",
-      "name": "Hello",
-      "value": 654,
+      "name": "test_num",
+      "value": 125,
       "tagType": "AtomicTag"
     },
     {
@@ -107,12 +89,61 @@
       ]
     },
     {
-      "name": "newTypeInstance",
-      "typeId": "TestType",
-      "tagType": "UdtInstance",
+      "valueSource": "memory",
+      "dataType": "Int4",
+      "name": "Hello",
+      "value": 654,
+      "tagType": "AtomicTag"
+    },
+    {
+      "valueSource": "db",
+      "dataType": "DataSet",
+      "datasource": "Sample_SQLite_Database",
+      "query": "select * from tank; ",
+      "name": "someQuery",
+      "tagType": "AtomicTag"
+    },
+    {
+      "valueSource": "memory",
+      "dataType": "DataSet",
+      "name": "aDataSet",
+      "tagType": "AtomicTag"
+    },
+    {
+      "valueSource": "derived",
+      "deriveExpressionGetter": "{source} + 10",
+      "dataType": "Int4",
+      "deriveExpressionSetter": "{value} - 20",
+      "sourceTagPath": "[Sample_Tags]Ramp/Ramp1",
+      "name": "derivedTag",
+      "tagType": "AtomicTag"
+    },
+    {
+      "name": "Testa",
+      "tagType": "Folder",
       "tags": [
         {
-          "name": "testInt",
+          "name": "Testa_embedded",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "testString",
+              "value": "Hey I am a String",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "Hey Folder",
+          "tagType": "Folder"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Int4",
+          "name": "basicNum",
+          "value": 1234,
           "tagType": "AtomicTag"
         }
       ]
@@ -133,19 +164,15 @@
       "opcServer": "Ignition OPC UA Server"
     },
     {
-      "valueSource": "db",
-      "dataType": "DataSet",
-      "datasource": "Sample_SQLite_Database",
-      "query": "select * from tank; ",
-      "name": "someQuery",
-      "tagType": "AtomicTag"
-    },
-    {
-      "valueSource": "memory",
-      "dataType": "Int4",
-      "name": "test_num",
-      "value": 125,
-      "tagType": "AtomicTag"
+      "name": "newTypeInstance",
+      "typeId": "TestType",
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "testInt",
+          "tagType": "AtomicTag"
+        }
+      ]
     },
     {
       "valueSource": "expr",
@@ -155,54 +182,23 @@
       "tagType": "AtomicTag"
     },
     {
-      "name": "fol1",
-      "tagType": "Folder",
-      "tags": [
-        {
-          "name": "aNewInstance",
-          "typeId": "TestType",
-          "parameters": {
-            "testParameter": {
-              "dataType": "Integer",
-              "value": 17
-            }
-          },
-          "tagType": "UdtInstance",
-          "tags": [
-            {
-              "name": "testInt",
-              "tagType": "AtomicTag"
-            }
-          ]
-        },
-        {
-          "name": "fol2",
-          "tagType": "Folder"
-        }
-      ]
-    },
-    {
       "name": "_types_",
       "tagType": "Folder",
       "tags": [
         {
-          "name": "TestType",
-          "parameters": {
-            "testParameter": {
-              "dataType": "Integer",
-              "value": 0
-            }
-          },
-          "tagType": "UdtType",
+          "name": "testUDTFolder",
+          "tagType": "Folder",
           "tags": [
             {
-              "value": {
-                "bindType": "parameter",
-                "binding": "{testParameter} * {testParameter} "
-              },
-              "valueSource": "memory",
-              "name": "testInt",
-              "tagType": "AtomicTag"
+              "name": "newUDTTag",
+              "typeId": "TestType",
+              "tagType": "UdtType",
+              "tags": [
+                {
+                  "name": "testInt",
+                  "tagType": "AtomicTag"
+                }
+              ]
             }
           ]
         },
@@ -235,6 +231,31 @@
           ]
         },
         {
+          "name": "TestType",
+          "parameters": {
+            "testParameter": {
+              "dataType": "Integer",
+              "value": 0
+            }
+          },
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "value": {
+                "bindType": "parameter",
+                "binding": "{testParameter} * {testParameter} "
+              },
+              "valueSource": "memory",
+              "name": "testInt",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "FolderToAdd",
+          "tagType": "Folder"
+        },
+        {
           "name": "UDTs",
           "tagType": "Folder",
           "tags": [
@@ -242,22 +263,6 @@
               "name": "Timer Triggers",
               "tagType": "UdtType",
               "tags": [
-                {
-                  "valueSource": "expr",
-                  "eventScripts": [
-                    {
-                      "eventid": "valueChanged",
-                      "script": "\tshared.Intellic.ScreenBuffer.everyNMinutes(4)\t"
-                    }
-                  ],
-                  "expression": "now()",
-                  "dataType": "DateTime",
-                  "name": "Every 4 Minutes",
-                  "formatString": "yyyy-MM-dd h:mm:ss aa",
-                  "executionMode": "FixedRate",
-                  "executionRate": 240000,
-                  "tagType": "AtomicTag"
-                },
                 {
                   "valueSource": "expr",
                   "eventScripts": [
@@ -279,6 +284,22 @@
                   "eventScripts": [
                     {
                       "eventid": "valueChanged",
+                      "script": "\tshared.Intellic.ScreenBuffer.everyNMinutes(4)\t"
+                    }
+                  ],
+                  "expression": "now()",
+                  "dataType": "DateTime",
+                  "name": "Every 4 Minutes",
+                  "formatString": "yyyy-MM-dd h:mm:ss aa",
+                  "executionMode": "FixedRate",
+                  "executionRate": 240000,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "expr",
+                  "eventScripts": [
+                    {
+                      "eventid": "valueChanged",
                       "script": "\tshared.Intellic.ScreenBuffer.everyNMinutes(24)\t"
                     }
                   ],
@@ -288,27 +309,6 @@
                   "formatString": "yyyy-MM-dd h:mm:ss aa",
                   "executionMode": "FixedRate",
                   "executionRate": 1440000,
-                  "tagType": "AtomicTag"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "FolderToAdd",
-          "tagType": "Folder"
-        },
-        {
-          "name": "testUDTFolder",
-          "tagType": "Folder",
-          "tags": [
-            {
-              "name": "newUDTTag",
-              "typeId": "TestType",
-              "tagType": "UdtType",
-              "tags": [
-                {
-                  "name": "testInt",
                   "tagType": "AtomicTag"
                 }
               ]
