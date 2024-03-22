@@ -1,9 +1,0 @@
-{
-  "base": {
-    "style": {
-      "backgroundColor": "var(--popupBackground)",
-      "overflow": "hidden",
-      "padding": "5px"
-    }
-  }
-}

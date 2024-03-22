@@ -2,6 +2,10 @@
   "pages": {
     "/": {
       "viewPath": "testview"
+    },
+    "/new-page": {
+      "title": "",
+      "viewPath": "view2"
     }
   },
   "sharedDocks": {

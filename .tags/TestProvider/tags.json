@@ -1,0 +1,16 @@
+{
+  "name": "",
+  "tagType": "Provider",
+  "tags": [
+    {
+      "name": "_types_",
+      "tagType": "Folder"
+    },
+    {
+      "valueSource": "memory",
+      "name": "TEST",
+      "value": 1234,
+      "tagType": "AtomicTag"
+    }
+  ]
+}
