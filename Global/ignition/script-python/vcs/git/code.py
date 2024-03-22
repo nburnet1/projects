@@ -30,7 +30,7 @@ def setTagRepo():
 #	projects = getProjectNames()
 	
 	gitSchema = {
-		"fullPath" : "",
+		"name" : "Global",
 		"tagType" : "UdtInstance",
 		"typeId" : "GitCommands",
 		"parameters" : {
