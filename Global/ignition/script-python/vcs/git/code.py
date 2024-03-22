@@ -11,8 +11,6 @@ def commit():
 		tags = system.tag.exportTags(filePath=filePath, tagPaths=["["+tp+"]"], recursive=True)
 	time.sleep(5)
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-auto-commit.sh"])
-	
-system.util.invokeAsynchronous(commit)
 
 def add():
 	pass
