@@ -17,6 +17,12 @@
           "tags": [
             {
               "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue:\n\t\tlogString \u003d vcs.git.getLog(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]log\", logString)\n\t\tcurrentValue \u003d False"
+                }
+              ],
               "dataType": "Boolean",
               "name": "refreshLog",
               "value": false,
@@ -56,6 +62,44 @@
               "tagType": "AtomicTag"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "."
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": true,
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
         }
       ]
     }
