@@ -3,6 +3,43 @@
   "tagType": "Provider",
   "tags": [
     {
+      "name": "Global",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "Global"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
       "name": "_types_",
       "tagType": "Folder",
       "tags": [
