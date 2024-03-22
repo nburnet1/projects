@@ -30,11 +30,11 @@ def setTagRepo():
 #	projects = getProjectNames()
 	
 	gitSchema = {
-		"name" : ".",
+		"name" : "~",
 		"tagType" : "UdtInstance",
 		"typeId" : "GitCommands",
 		"parameters" : {
-			"projectName" : "~"
+			"projectName" : "."
 			}
 	}
 	
