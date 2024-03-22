@@ -20,7 +20,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue:\n\t\tlogString \u003d vcs.git.getLog(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]log\", logString)\n\t\tcurrentValue \u003d False"
+                  "script": "\tif currentValue:\n\t\tlogString \u003d vcs.git.getLog(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]log\", logString)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", False)"
                 }
               ],
               "dataType": "Boolean",

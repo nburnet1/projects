@@ -36,6 +36,7 @@ def getProjectNames():
 	projectDir = "/usr/local/bin/ignition/data/projects/"
 	return os.listDir(projectDir)
 	
+	
 def setTagRepo():
 	from copy import deepcopy
 #	projects = getProjectNames()
