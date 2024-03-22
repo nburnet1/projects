@@ -4,7 +4,55 @@
   "tags": [
     {
       "name": "_types_",
-      "tagType": "Folder"
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "GitCommands",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "refreshLog",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "name": "log",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "commit",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "status",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "add",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "push",
+              "value": false,
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

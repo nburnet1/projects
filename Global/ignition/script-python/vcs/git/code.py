@@ -1,3 +1,4 @@
+import os
 def commit():
 	import system
 	import time
@@ -12,6 +13,24 @@ def commit():
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-auto-commit.sh"])
 	
 system.util.invokeAsynchronous(commit)
+
+def add():
+	pass
+
+def push():
+	pass
+
+def status():
+	pass
+
+def getProjectNames():
+	import pprint
+	projectDir = "/usr/local/bin/ignition/data/projects/"
+	
+	projects = os.listDir(projectDir)
+	
+	pprint(projects)
+
 
 def importTags():
 	import os 
