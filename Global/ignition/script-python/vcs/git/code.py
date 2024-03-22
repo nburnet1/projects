@@ -23,7 +23,8 @@ def status():
 	
 def getLog(projectName):
 	
-	logPath = "/usr/local/bin/ignition/data/projects/"+ (projectName if projectName != '.' else projectName) +"/git.log"
+#	logPath = "/usr/local/bin/ignition/data/projects/"+ (projectName if projectName != '.' else projectName) +"/git.log"
+	logPath = "/usr/local/bin/ignition/data/projects/git.log"
 	
 	with open(logPath, "r") as log:
 		logString = log.read()
