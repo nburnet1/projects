@@ -23,6 +23,7 @@ def status():
 
 def getProjectNames():
 	import pprint
+	import os
 	projectDir = "/usr/local/bin/ignition/data/projects/"
 	
 	projects = os.listDir(projectDir)
