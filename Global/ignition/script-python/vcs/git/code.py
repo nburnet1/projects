@@ -1,4 +1,3 @@
-import os
 def commit():
 	import system
 	import time
@@ -22,13 +21,26 @@ def status():
 	pass
 
 def getProjectNames():
-	import pprint
 	import os
 	projectDir = "/usr/local/bin/ignition/data/projects/"
+	return os.listDir(projectDir)
 	
-	projects = os.listDir(projectDir)
+def setTagRepo():
+	from copy import deepcopy
+#	projects = getProjectNames()
 	
-	pprint(projects)
+	gitSchema = {
+		"fullPath" : "",
+		"tagType" : "UdtInstance",
+		"typeId" : "GitCommands",
+		"parameters" : {
+			"projectName" : "Global"
+			}
+	}
+	
+	system.tag.configure("[git]", gitSchema)
+	
+	
 
 
 def importTags():

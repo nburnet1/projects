@@ -8,6 +8,11 @@
       "tags": [
         {
           "name": "GitCommands",
+          "parameters": {
+            "projectName": {
+              "dataType": "String"
+            }
+          },
           "tagType": "UdtType",
           "tags": [
             {
