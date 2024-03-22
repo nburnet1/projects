@@ -878,6 +878,15 @@
           ]
         },
         "type": "ia.chart.xy"
+      },
+      {
+        "meta": {
+          "name": "CylindricalTank"
+        },
+        "position": {
+          "basis": "160px"
+        },
+        "type": "ia.display.cylindrical-tank"
       }
     ],
     "meta": {
