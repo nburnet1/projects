@@ -1,5 +1,5 @@
 def holder():
-	return "test" + "test" + "test" + "test"+ "test"
+	return "test"
 
 def aTest():
 	return "yoyo"
