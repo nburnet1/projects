@@ -97,7 +97,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": true,
+          "value": false,
           "name": "refreshLog",
           "tagType": "AtomicTag"
         }
