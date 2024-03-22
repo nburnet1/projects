@@ -89,6 +89,8 @@
           "tagType": "AtomicTag"
         },
         {
+          "dataType": "String",
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
