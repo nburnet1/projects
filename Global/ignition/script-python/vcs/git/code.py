@@ -52,7 +52,6 @@ def getVersionedDirectories():
 	
 def setTagRepo():
 	dirs = getVersionedDirectories()
-#	dirs = ["Global", "testUI"]
 
 	
 	gitSchema = {
