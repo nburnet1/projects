@@ -40,6 +40,43 @@
       ]
     },
     {
+      "name": "tags",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": ".tags"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
       "name": "jupyter",
       "typeId": "GitCommands",
       "parameters": {
@@ -146,6 +183,80 @@
         },
         {
           "name": "push",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "backups",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": ".backups"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": ".scripts"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
           "tagType": "AtomicTag"
         }
       ]

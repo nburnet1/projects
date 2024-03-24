@@ -76,6 +76,7 @@ def setTagRepo():
 			tempSchema = deepcopy(gitSchema)
 			tempSchema["name"] = folder[1:]
 			tempSchema["parameters"]["projectName"] = folder
+			gitProjectList.append(tempSchema)
 		else:
 			dirsVisible.append(folder)
 			
