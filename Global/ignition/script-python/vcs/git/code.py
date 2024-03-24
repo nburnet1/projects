@@ -42,9 +42,8 @@ def getLog(projectName):
 	
 
 def getVersionedDirectories():
-	import os
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"
-	versionedDirList = os.listdir(projectDir)
+	versionedDirList = os.listdir(versionDirPath)
 	
 	if ".git" in versionedDirList:
 		versionedDirList.remove(".git")
