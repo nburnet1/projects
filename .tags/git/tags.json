@@ -3,6 +3,154 @@
   "tagType": "Provider",
   "tags": [
     {
+      "name": "Global",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "Global"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "jupyter",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "jupyter"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "_InitContainer",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "_InitContainer"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "."
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
       "name": "_types_",
       "tagType": "Folder",
       "tags": [
@@ -69,6 +217,80 @@
               "tagType": "AtomicTag"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "testUI",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "testUI"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "testProj",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "testProj"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
         }
       ]
     }

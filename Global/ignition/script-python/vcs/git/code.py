@@ -72,7 +72,7 @@ def setTagRepo():
 	# Checks for hidden folders and applies specific logic
 	dirsVisible = []
 	for folder in dirs:
-		if "." in hiddenFolder:
+		if "." in folder:
 			tempSchema = deepcopy(gitSchema)
 			tempSchema["name"] = folder[1:]
 			tempSchema["parameters"]["projectName"] = folder
