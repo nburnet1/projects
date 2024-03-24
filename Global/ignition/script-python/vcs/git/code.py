@@ -42,6 +42,7 @@ def getLog(projectName):
 	
 
 def getVersionedDirectories():
+	import os
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"
 	versionedDirList = os.listDir(projectDir)
 	
