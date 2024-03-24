@@ -45,7 +45,7 @@ def getVersionedDirectories():
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"
 	versionedDirList = os.listdir(versionDirPath)
 	
-	if ".git" in versionedDirList:
+	if "." in versionedDirList:
 		versionedDirList.remove(".git")
 		
 	return versionedDirList
@@ -70,6 +70,7 @@ def setTagRepo():
 	
 
 	for folder in dirs:
+		folder = folder if "." not in folder else folder[1:]
 		tempSchema = deepcopy(gitSchema)
 		tempSchema["name"] = folder
 		tempSchema["parameters"]["projectName"] = folder
