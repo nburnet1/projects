@@ -45,8 +45,10 @@ def getVersionedDirectories():
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"
 	versionedDirList = os.listdir(versionDirPath)
 	
-	if ".git" in versionedDirList:
-		versionedDirList.remove(".git")
+	elementsToRemove = [".git",".resources", ".gitignore", "conversion-report.txt"]
+	for element in elementsToRemove:
+		if element in versionedDirList:
+			versionedDirList.remove(element)
 		
 	return versionedDirList
 	
