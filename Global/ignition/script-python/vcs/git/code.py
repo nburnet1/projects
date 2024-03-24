@@ -1,4 +1,7 @@
 from __future__ import with_statement
+import os
+from copy import deepcopy
+
 def commit():
 	import system
 	import time
@@ -25,7 +28,6 @@ def status(projectName):
 		print "Could not excecute git status", e
 	
 def getLog(projectName):
-	import os
 	
 	logPath = "/usr/local/bin/ignition/data/projects/"+ (projectName if projectName != '.' else projectName) +"/git.log"
 	logString = "log at " + logPath + " does not exist. Please try to perform an operation."
@@ -41,14 +43,18 @@ def getLog(projectName):
 	return logString
 	
 
-def getProjectNames():
-	import os
-	projectDir = "/usr/local/bin/ignition/data/projects/"
-	return os.listDir(projectDir)
+def getVersionedDirectories():
+	versionDirPath = "/usr/local/bin/ignition/data/projects/"
+	versionedDirList = os.listDir(projectDir)
+	
+	if ".git" in versionedDirList:
+		versionedDirList.remove(".git")
+		
+	return versionedDirList
 	
 def setTagRepo():
-	from copy import deepcopy
-#	projects = getProjectNames()
+	dirs = getVersionedDirectories()
+
 	
 	gitSchema = {
 		"name" : "root",
@@ -58,13 +64,23 @@ def setTagRepo():
 			"projectName" : "."
 			}
 	}
+	gitProjectList = []
 	
-	system.tag.configure("[git]", gitSchema, "o")
+	# Adds the root directory to the tag space
+	gitProjectList.append(deepcopy(gitSchema))
+	
+
+	for folder in dirs:
+		tempSchema = deepcopy(gitSchema)
+		tempSchema["name"] = folder
+		tempSchema["parameters"]["projectName"] = folder
+		gitProjectList.append(tempSchema)
+	
+	system.tag.configure("[git]", gitProjectList, "o")
 	
 
 
 def importTags():
-	import os 
 	#system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-startup-restore.sh"])
 	
 	projectDir = "/usr/local/bin/ignition/data/projects/.tags"
