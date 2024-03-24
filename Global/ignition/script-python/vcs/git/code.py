@@ -67,6 +67,7 @@ def setTagRepo():
 	gitProjectList = []
 	
 	
+	
 	# Adds the root directory to the tag space 
 	gitProjectList.append(deepcopy(gitSchema))
 	
