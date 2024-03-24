@@ -164,6 +164,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
+          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
@@ -176,6 +177,7 @@
           "tagType": "AtomicTag"
         },
         {
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -184,6 +186,7 @@
           "tagType": "AtomicTag"
         },
         {
+          "value": false,
           "name": "refreshLog",
           "tagType": "AtomicTag"
         }
