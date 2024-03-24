@@ -27,7 +27,7 @@ def status(projectName):
 	
 def getLog(projectName):
 	
-	logPath = "/usr/local/bin/ignition/data/projects"+ ("/" + projectName if projectName != '.' else "") +"/git.log"
+	logPath = "/usr/local/bin/ignition/data/projects/" + projectName + "/git.log"
 	logString = "log at " + logPath + " does not exist. Please try to perform an operation."
 	
 	if os.path.exists(logPath):
