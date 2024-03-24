@@ -22,6 +22,7 @@ def status():
 	pass
 	
 def getLog(projectName):
+	import os
 	
 #	logPath = "/usr/local/bin/ignition/data/projects/"+ (projectName if projectName != '.' else projectName) +"/git.log"
 	logPath = "/usr/local/bin/ignition/data/projects/git.log"
