@@ -2,6 +2,8 @@ from __future__ import with_statement
 import os
 from copy import deepcopy
 
+PROJECT_PATH = "/usr/local/bin/ignition/data/projects/"
+
 def commit():
 	import system
 	import time
