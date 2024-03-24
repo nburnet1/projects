@@ -188,19 +188,6 @@
       ]
     },
     {
-      "valueSource": "memory",
-      "eventScripts": [
-        {
-          "eventid": "valueChanged",
-          "script": "\tsystem.tag.writeBlocking(\"[git]asdf\", str(vcs.git.getVersionedDirectories()))\n\tsystem.tag.writeBlocking(\"[git]test\", False)"
-        }
-      ],
-      "dataType": "Boolean",
-      "name": "test",
-      "value": false,
-      "tagType": "AtomicTag"
-    },
-    {
       "name": "backups",
       "typeId": "GitCommands",
       "parameters": {
@@ -310,13 +297,6 @@
           "tagType": "AtomicTag"
         }
       ]
-    },
-    {
-      "valueSource": "memory",
-      "dataType": "String",
-      "name": "asdf",
-      "value": "[\u0027Global\u0027, \u0027.backups\u0027, \u0027.tags\u0027, \u0027.gitignore\u0027, \u0027jupyter\u0027, \u0027testUI\u0027, \u0027.scripts\u0027, \u0027testProj\u0027, \u0027README.md\u0027, \u0027_InitContainer\u0027, \u0027.resources\u0027, \u0027conversion-report.txt\u0027]",
-      "tagType": "AtomicTag"
     },
     {
       "name": "tags",
