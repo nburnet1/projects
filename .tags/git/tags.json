@@ -421,6 +421,7 @@
           "tagType": "AtomicTag"
         },
         {
+          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
@@ -433,10 +434,12 @@
           "tagType": "AtomicTag"
         },
         {
+          "value": "log at /usr/local/bin/ignition/data/projects/git/git.log does not exist. Please try to perform an operation.",
           "name": "log",
           "tagType": "AtomicTag"
         },
         {
+          "value": false,
           "name": "refreshLog",
           "tagType": "AtomicTag"
         }
