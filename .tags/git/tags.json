@@ -77,6 +77,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
+          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
@@ -90,7 +91,7 @@
         },
         {
           "dataType": "String",
-          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges not staged for commit:\n  (use \"git add \u003cfile\u003e...\" to update what will be committed)\n  (use \"git restore \u003cfile\u003e...\" to discard changes in working directory)\n\tmodified:   .scripts/git-status.sh\n\nUntracked files:\n  (use \"git add \u003cfile\u003e...\" to include in what will be committed)\n\tgit.log\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
           "name": "log",
           "tagType": "AtomicTag"
         },

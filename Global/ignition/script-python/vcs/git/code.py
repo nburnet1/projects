@@ -25,9 +25,16 @@ def getLog(projectName):
 	
 #	logPath = "/usr/local/bin/ignition/data/projects/"+ (projectName if projectName != '.' else projectName) +"/git.log"
 	logPath = "/usr/local/bin/ignition/data/projects/git.log"
+	logString = "log does not exist. Please try to perform an operation."
 	
-	with open(logPath, "r") as log:
-		logString = log.read()
+	if os.path.exists(logPath):
+		try:
+			with open(logPath, "r") as log:
+				logString = log.read()
+		except Exception, e:
+			print "Error opening file:", e 
+			
+			
 	return logString
 	
 
