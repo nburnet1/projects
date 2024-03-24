@@ -18,7 +18,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": "log at /usr/local/bin/ignition/data/projects/Global/git.log does not exist. Please try to perform an operation.",
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -126,7 +126,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue:\n\t\tvcs.git.status(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]status\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
+                  "script": "\tif currentValue:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.status(projectName)\n\t\tsystem.tag.writeBlocking(\"[.]status\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
                 }
               ],
               "dataType": "Boolean",
@@ -177,7 +177,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
+          "value": "log at /usr/local/bin/ignition/data/projects/./git.log does not exist. Please try to perform an operation.",
           "name": "log",
           "tagType": "AtomicTag"
         },
