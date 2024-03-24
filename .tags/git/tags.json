@@ -20,7 +20,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue:\n\t\tlogString \u003d vcs.git.getLog(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]log\", logString)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", False)"
+                  "script": "\tif currentValue:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tlogString \u003d vcs.git.getLog(projectName)\n\t\tsystem.tag.writeBlocking([\"[.]log\", \"[.]refreshLog\"], [logString, False])"
                 }
               ],
               "dataType": "Boolean",
@@ -89,6 +89,7 @@
           "tagType": "AtomicTag"
         },
         {
+          "value": false,
           "name": "push",
           "tagType": "AtomicTag"
         },
@@ -98,7 +99,7 @@
         },
         {
           "dataType": "String",
-          "value": "log does not exist. Please try to perform an operation.",
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nUntracked files:\n  (use \"git add \u003cfile\u003e...\" to include in what will be committed)\n\ttest.txt\n\nnothing added to commit but untracked files present (use \"git add\" to track)\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
