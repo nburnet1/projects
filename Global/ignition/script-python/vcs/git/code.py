@@ -18,8 +18,11 @@ def add():
 def push():
 	pass
 
-def status():
-	pass
+def status(projectName):
+	try:
+		system.util.execute("/usr/local/bin/ignition/data/projects/.scripts/git-status.sh", projectName)
+	except Exception, e:
+		print "Could not excecute git status", e
 	
 def getLog(projectName):
 	import os

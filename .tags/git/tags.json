@@ -43,6 +43,12 @@
             },
             {
               "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue:\n\t\tvcs.git.status(\".\")\n\t\tsystem.tag.writeBlocking(\"[.]status\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
+                }
+              ],
               "dataType": "Boolean",
               "name": "status",
               "value": false,
@@ -92,7 +98,7 @@
         },
         {
           "dataType": "String",
-          "value": "On branch feature Your branch is up to date with \u0027origin/feature\u0027.  Changes not staged for commit:   (use \"git add \u003cfile\u003e...\" to update what will be committed)   (use \"git restore \u003cfile\u003e...\" to discard changes in working directory) \tmodified:   .scripts/git-status.sh  Untracked files:   (use \"git add \u003cfile\u003e...\" to include in what will be committed) \tgit.log  no changes added to commit (use \"git add\" and/or \"git commit -a\") ",
+          "value": "log does not exist. Please try to perform an operation.",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -101,7 +107,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": true,
+          "value": false,
           "name": "refreshLog",
           "tagType": "AtomicTag"
         }
