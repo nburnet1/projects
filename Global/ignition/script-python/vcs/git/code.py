@@ -69,9 +69,18 @@ def setTagRepo():
 	# Adds the root directory to the tag space 
 	gitProjectList.append(deepcopy(gitSchema))
 	
-
+	# Checks for hidden folders and applies specific logic
+	dirsVisible = []
 	for folder in dirs:
-		folder = folder if "." not in folder else folder[1:]
+		if "." in hiddenFolder:
+			tempSchema = deepcopy(gitSchema)
+			tempSchema["name"] = folder[1:]
+			tempSchema["parameters"]["projectName"] = folder
+		else:
+			dirsVisible.append(folder)
+			
+	# Gets the left overs from the past for loop check
+	for folder in dirsVisible:
 		tempSchema = deepcopy(gitSchema)
 		tempSchema["name"] = folder
 		tempSchema["parameters"]["projectName"] = folder
