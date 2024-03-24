@@ -22,10 +22,8 @@ def push():
 	pass
 
 def status(projectName):
-	try:
-		system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-status.sh", projectName])
-	except Exception, e:
-		print "Could not excecute git status", e
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-status.sh", projectName])
+
 	
 def getLog(projectName):
 	

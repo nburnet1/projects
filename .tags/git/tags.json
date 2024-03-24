@@ -3,6 +3,86 @@
   "tagType": "Provider",
   "tags": [
     {
+      "name": "Global",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "Global"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": "log at /usr/local/bin/ignition/data/projects/Global/git.log does not exist. Please try to perform an operation.",
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "status",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "testUI",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "testUI"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "value": false,
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
       "name": "_types_",
       "tagType": "Folder",
       "tags": [
@@ -84,12 +164,10 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
         {
-          "value": false,
           "name": "push",
           "tagType": "AtomicTag"
         },
@@ -98,8 +176,6 @@
           "tagType": "AtomicTag"
         },
         {
-          "dataType": "String",
-          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges not staged for commit:\n  (use \"git add/rm \u003cfile\u003e...\" to update what will be committed)\n  (use \"git restore \u003cfile\u003e...\" to discard changes in working directory)\n\tdeleted:    test.txt\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -108,7 +184,6 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": false,
           "name": "refreshLog",
           "tagType": "AtomicTag"
         }
