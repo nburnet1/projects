@@ -49,6 +49,23 @@ def getLog(projectName):
 			
 	return logString
 	
+def getCommitLog():
+	logPath = "/usr/local/bin/ignition/data/projects/commit.log"
+	logString = "commit log at " + logPath + " does not exist. Please perform the corresponding operation to get commit history."
+	
+	if os.path.exists(logPath):
+		try:
+			with open(logPath, "r") as log:
+				logString = log.read()
+		except Exception, e:
+			print "Error opening file:", e 
+			
+	return logString
+
+def setCommitLog():
+	# stores git log output into stand alone file
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-log.sh"])
+	
 
 def getVersionedDirectories():
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"

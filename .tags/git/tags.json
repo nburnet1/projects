@@ -189,6 +189,14 @@
         {
           "name": "add",
           "tagType": "AtomicTag"
+        },
+        {
+          "name": "commitLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshCommitLog",
+          "tagType": "AtomicTag"
         }
       ]
     },
@@ -235,6 +243,12 @@
               "tagType": "AtomicTag"
             },
             {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "commitLog",
+              "tagType": "AtomicTag"
+            },
+            {
               "name": "log",
               "tagType": "AtomicTag"
             },
@@ -243,6 +257,19 @@
               "dataType": "String",
               "name": "commitMessage",
               "value": "",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\t# There will almost never be a time where we wouldn\u0027t set before we get in this instance.\n\t\tvcs.git.setCommitLog()\n\t\tlogString \u003d vcs.git.getCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]commitLog\", \"[.]refreshCommitLog\"], [logString, False])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "refreshCommitLog",
+              "value": false,
               "tagType": "AtomicTag"
             },
             {
@@ -278,7 +305,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\t# Will requery the status once the folder has been added.\n\t\tsystem.tag.writeBlocking([\"[.]commit\", \"[.]commitMessage\", \"[.]status\"], [False, \"\", True])"
+                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[.]commit\", \"[.]commitMessage\", \"[.]refreshLog\", \"[.]refreshCommitLog\"], \n\t\t\t[False, \"\", True, True]\n\t\t)"
                 }
               ],
               "dataType": "Boolean",
