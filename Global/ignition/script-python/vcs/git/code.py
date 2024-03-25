@@ -18,8 +18,8 @@ def commit():
 	time.sleep(5)
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-auto-commit.sh"])
 
-def add():
-	pass
+def add(projectName):
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-add.sh", projectName])
 
 def branch():
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh"])
