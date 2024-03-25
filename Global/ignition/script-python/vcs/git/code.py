@@ -60,7 +60,7 @@ def setTagRepo():
 	
 	# rootSchema allows us to commit and push our changes
 	rootSchema = {
-		"name" : "root",
+		"name" : "__root__",
 		"tagType" : "UdtInstance",
 		"typeId" : "RootCommands",
 		"parameters" : {
