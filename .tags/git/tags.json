@@ -18,14 +18,6 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "refreshLog",
           "tagType": "AtomicTag"
         },
@@ -35,10 +27,6 @@
         },
         {
           "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
           "tagType": "AtomicTag"
         }
       ]
@@ -55,15 +43,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
           "tagType": "AtomicTag"
         },
         {
@@ -76,10 +56,6 @@
         },
         {
           "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
           "tagType": "AtomicTag"
         }
       ]
@@ -100,15 +76,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
           "tagType": "AtomicTag"
         },
         {
@@ -117,10 +85,6 @@
         },
         {
           "name": "log",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
           "tagType": "AtomicTag"
         }
       ]
@@ -141,15 +105,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "push",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commitMessage",
           "tagType": "AtomicTag"
         },
         {
@@ -158,10 +114,6 @@
         },
         {
           "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
           "tagType": "AtomicTag"
         }
       ]
@@ -182,23 +134,11 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "push",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "add",
           "tagType": "AtomicTag"
         },
         {
           "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commitMessage",
           "tagType": "AtomicTag"
         },
         {
@@ -241,13 +181,6 @@
             },
             {
               "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "commit",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
@@ -265,18 +198,28 @@
               "name": "add",
               "value": false,
               "tagType": "AtomicTag"
-            },
+            }
+          ]
+        },
+        {
+          "name": "RootCommands",
+          "typeId": "GitCommands",
+          "tagType": "UdtType",
+          "tags": [
             {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "commitMessage",
+              "name": "refreshLog",
               "tagType": "AtomicTag"
             },
             {
-              "valueSource": "memory",
-              "dataType": "Boolean",
-              "name": "push",
-              "value": false,
+              "name": "add",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "log",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "status",
               "tagType": "AtomicTag"
             }
           ]
@@ -295,11 +238,8 @@
       "tagType": "UdtInstance",
       "tags": [
         {
+          "value": false,
           "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
           "tagType": "AtomicTag"
         },
         {
@@ -307,18 +247,12 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
-          "tagType": "AtomicTag"
-        },
-        {
+          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
         {
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nnothing to commit, working tree clean\n",
           "name": "log",
           "tagType": "AtomicTag"
         }
@@ -336,19 +270,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "name": "commit",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commitMessage",
           "tagType": "AtomicTag"
         },
         {
@@ -381,23 +303,11 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "push",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commit",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "log",
           "tagType": "AtomicTag"
         },
         {
           "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "commitMessage",
           "tagType": "AtomicTag"
         },
         {
@@ -418,10 +328,6 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "name": "commit",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -434,15 +340,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "push",
           "tagType": "AtomicTag"
         }
       ]

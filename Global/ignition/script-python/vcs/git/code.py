@@ -58,6 +58,16 @@ def getVersionedDirectories():
 def setTagRepo():
 	dirs = getVersionedDirectories()
 
+	# rootSchema allows us to commit and push our changes
+	rootSchema = {
+		"name" : "root",
+		"tagType" : "UdtInstance",
+		"typeId" : "RootCommands",
+		"parameters" : {
+			"projectName" : "."
+			}
+	}
+	gitProjectList.append(rootSchema)
 	
 	gitSchema = {
 		"name" : "root",
@@ -68,9 +78,6 @@ def setTagRepo():
 			}
 	}
 	gitProjectList = []
-	
-	# Adds the root directory to the tag space 
-	gitProjectList.append(deepcopy(gitSchema))
 	
 	# Checks for hidden folders and applies specific logic
 	dirsVisible = []
