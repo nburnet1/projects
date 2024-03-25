@@ -70,11 +70,11 @@ def setTagRepo():
 	gitProjectList.append(rootSchema)
 	
 	gitSchema = {
-		"name" : "root",
+		"name" : "",
 		"tagType" : "UdtInstance",
 		"typeId" : "GitCommands",
 		"parameters" : {
-			"projectName" : "."
+			"projectName" : ""
 			}
 	}
 	gitProjectList = []
