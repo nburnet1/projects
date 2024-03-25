@@ -175,6 +175,10 @@
           "tagType": "AtomicTag"
         },
         {
+          "name": "setCommitLog",
+          "tagType": "AtomicTag"
+        },
+        {
           "name": "commitMessage",
           "tagType": "AtomicTag"
         },
@@ -264,7 +268,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\t# There will almost never be a time where we wouldn\u0027t set before we get in this instance.\n\t\tvcs.git.setCommitLog()\n\t\tlogString \u003d vcs.git.getCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]commitLog\", \"[.]refreshCommitLog\"], [logString, False])"
+                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.getCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]commitLog\", \"[.]refreshCommitLog\"], [logString, False])"
                 }
               ],
               "dataType": "Boolean",
@@ -290,11 +294,30 @@
               "tagType": "AtomicTag"
             },
             {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.setCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]setCommitLog\", \"[.]refreshCommitLog\"], [False, True])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "setCommitLog",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
               "name": "add",
               "tagType": "AtomicTag"
             },
             {
               "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.push()\n\t\tsystem.tag.writeBlocking([\"[.]push\",\"[.]refreshLog\"], [False,True])"
+                }
+              ],
               "dataType": "Boolean",
               "name": "push",
               "value": false,

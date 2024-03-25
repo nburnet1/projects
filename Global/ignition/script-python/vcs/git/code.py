@@ -17,25 +17,55 @@ def commit():
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-auto-commit.sh"])
 	
 def commitTest(commitMessage):
+	"""Commits the the changes staged at root of the repo
+		
+		Shell equivalent:
+			git commit -m "$commitMessage"
+			
+	"""
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-commit.sh", commitMessage])
 
 def add(projectName):
+	"""Stages the changes made within a given folder
+	
+		Shell equivalent:
+			git add $projectName
+	"""
+	
+	# This indicates a reserved project name called '.tags.' Will export tags to be versioned
 	if projectName == ".tags":
 		exportTags()
 		
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-add.sh", projectName])
 
 def branch():
+	"""Gets the branch of the repo.
+	
+		Shell equivalent:
+			git branch
+	"""
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh"])
 
 def push():
-	pass
+	"""Pushes the changes to the repo
+		
+		Shell equivalent:
+			git push
+	"""
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh"])
 
 def status(projectName):
+	"""Gets the status of the repo. Shows changes, stages, commits.
+	
+		Shell equivalent:
+			git status $projectName
+	"""
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-status.sh", projectName])
 
 	
 def getLog(projectName):
+	"""Attempts to open a file that shows general logging.
+	"""
 	
 	logPath = "/usr/local/bin/ignition/data/projects/" + projectName + "/git.log"
 	logString = "log at " + logPath + " does not exist. Please try to perform an operation."
@@ -50,6 +80,8 @@ def getLog(projectName):
 	return logString
 	
 def getCommitLog():
+	"""Gets the output of git log 
+	"""
 	logPath = "/usr/local/bin/ignition/data/projects/commit.log"
 	logString = "commit log at " + logPath + " does not exist. Please perform the corresponding operation to get commit history."
 	
@@ -63,11 +95,19 @@ def getCommitLog():
 	return logString
 
 def setCommitLog():
+	"""Runs the shell script that activates git log and stores in commit.log
+	
+		Shell Equivalent:
+			git log --pretty --graph
+			
+	"""
 	# stores git log output into stand alone file
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-log.sh"])
 	
 
 def getVersionedDirectories():
+	"""This will get directories that are 'versionable'
+	"""
 	versionDirPath = "/usr/local/bin/ignition/data/projects/"
 	versionedDirList = os.listdir(versionDirPath)
 	
