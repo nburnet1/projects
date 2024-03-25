@@ -43,7 +43,6 @@ def getLog(projectName):
 		except Exception, e:
 			print "Error opening file:", e 
 			
-			
 	return logString
 	
 

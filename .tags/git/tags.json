@@ -47,15 +47,15 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "log",
           "tagType": "AtomicTag"
         },
         {
           "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
           "tagType": "AtomicTag"
         }
       ]
@@ -72,15 +72,15 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "status",
           "tagType": "AtomicTag"
         },
         {
           "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
           "tagType": "AtomicTag"
         },
         {
@@ -171,10 +171,6 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "branch",
           "tagType": "AtomicTag"
         },
@@ -188,6 +184,10 @@
         },
         {
           "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
           "tagType": "AtomicTag"
         }
       ]
@@ -250,20 +250,20 @@
               "tagType": "AtomicTag"
             },
             {
-              "name": "add",
-              "tagType": "AtomicTag"
-            },
-            {
               "valueSource": "memory",
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.branch()\n\t\tsystem.tag.writeBlocking(\"[.]branch\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.branch()\n\t\tsystem.tag.writeBlocking([\"[.]branch\",\"[.]refreshLog\"], [False,True])"
                 }
               ],
               "dataType": "Boolean",
               "name": "branch",
               "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "add",
               "tagType": "AtomicTag"
             },
             {
@@ -315,7 +315,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.status(projectName)\n\t\tsystem.tag.writeBlocking(\"[.]status\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
+                  "script": "\tif currentValue.value:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.status(projectName)\n\t\tsystem.tag.writeBlocking([\"[.]status\", \"[.]refreshLog\"], [False, True])"
                 }
               ],
               "dataType": "Boolean",
@@ -325,6 +325,12 @@
             },
             {
               "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.add(projectName)\n\t\t# Will requery the status once the folder has been added.\n\t\tsystem.tag.writeBlocking([\"[.]add\", \"[.]status\"], [False, True])"
+                }
+              ],
               "dataType": "Boolean",
               "name": "add",
               "value": false,
@@ -381,15 +387,15 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
           "name": "log",
           "tagType": "AtomicTag"
         },
         {
           "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
           "tagType": "AtomicTag"
         }
       ]
