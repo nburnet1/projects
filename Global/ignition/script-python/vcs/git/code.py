@@ -57,6 +57,7 @@ def getVersionedDirectories():
 	
 def setTagRepo():
 	dirs = getVersionedDirectories()
+	gitProjectList = []
 	
 	# rootSchema allows us to commit and push our changes
 	rootSchema = {
@@ -77,7 +78,6 @@ def setTagRepo():
 			"projectName" : ""
 			}
 	}
-	gitProjectList = []
 	
 	# Checks for hidden folders and applies specific logic
 	dirsVisible = []
