@@ -1,12 +1,13 @@
 from __future__ import with_statement
 import os
 from copy import deepcopy
+import system
+import time
 
 PROJECT_PATH = "/usr/local/bin/ignition/data/projects/"
 
 def commit():
-	import system
-	import time
+
 	
 	tagProviders= system.db.runPrepQuery("Select NAME from TAGPROVIDERSETTINGS WHERE NAME != 'default'",database="IgnitionInternal")
 	tagProviders = [tagProviders[row]['NAME'] for row in range(len(tagProviders))]
