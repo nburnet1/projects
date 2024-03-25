@@ -1,4 +1,4 @@
-cd /usr/local/bin/ignition/data/projects
+cd /usr/local/bin/ignition/data/projects/$1
 # Args:
 # project name
-git status $1 > /usr/local/bin/ignition/data/projects/$1/git.log
+git status . > /usr/local/bin/ignition/data/projects/$1/git.log
