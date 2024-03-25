@@ -45,7 +45,7 @@ def branch():
 			git branch
 	"""
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh"])
-
+	
 def push():
 	"""Pushes the changes to the repo
 		
