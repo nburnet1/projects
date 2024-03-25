@@ -211,7 +211,28 @@
               "tagType": "AtomicTag"
             },
             {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "commitMessage",
+              "value": "",
+              "tagType": "AtomicTag"
+            },
+            {
               "name": "add",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "commit",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Boolean",
+              "name": "push",
+              "value": false,
               "tagType": "AtomicTag"
             },
             {

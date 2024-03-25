@@ -57,7 +57,7 @@ def getVersionedDirectories():
 	
 def setTagRepo():
 	dirs = getVersionedDirectories()
-
+	
 	# rootSchema allows us to commit and push our changes
 	rootSchema = {
 		"name" : "root",
