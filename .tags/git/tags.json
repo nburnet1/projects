@@ -275,6 +275,12 @@
             },
             {
               "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\t# Will requery the status once the folder has been added.\n\t\tsystem.tag.writeBlocking([\"[.]commit\", \"[.]commitMessage\", \"[.]status\"], [False, \"\", True])"
+                }
+              ],
               "dataType": "Boolean",
               "name": "commit",
               "value": false,

@@ -8,17 +8,21 @@ PROJECT_PATH = "/usr/local/bin/ignition/data/projects/"
 
 def commit():
 
-	
 	tagProviders= system.db.runPrepQuery("Select NAME from TAGPROVIDERSETTINGS WHERE NAME != 'default'",database="IgnitionInternal")
 	tagProviders = [tagProviders[row]['NAME'] for row in range(len(tagProviders))]
-	
 	for tp in tagProviders:
 		filePath = "/usr/local/bin/ignition/data/projects/.tags/"+tp+"/tags.json"
 		tags = system.tag.exportTags(filePath=filePath, tagPaths=["["+tp+"]"], recursive=True)
 	time.sleep(5)
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-auto-commit.sh"])
+	
+def commitTest(commitMessage):
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-commit.sh", commitMessage])
 
 def add(projectName):
+	if projectName == ".tags":
+		exportTags()
+		
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-add.sh", projectName])
 
 def branch():
@@ -101,7 +105,12 @@ def setTagRepo():
 	
 	system.tag.configure("[git]", gitProjectList, "o")
 	
-
+def exportTags():
+	tagProviders= system.db.runPrepQuery("Select NAME from TAGPROVIDERSETTINGS WHERE NAME != 'default'",database="IgnitionInternal")
+	tagProviders = [tagProviders[row]['NAME'] for row in range(len(tagProviders))]
+	for tp in tagProviders:
+		filePath = "/usr/local/bin/ignition/data/projects/.tags/"+tp+"/tags.json"
+		tags = system.tag.exportTags(filePath=filePath, tagPaths=["["+tp+"]"], recursive=True)
 
 def importTags():
 	#system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-startup-restore.sh"])
