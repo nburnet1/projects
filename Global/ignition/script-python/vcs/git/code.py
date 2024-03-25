@@ -21,6 +21,9 @@ def commit():
 def add():
 	pass
 
+def branch():
+	system.util.execute("/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh")
+
 def push():
 	pass
 

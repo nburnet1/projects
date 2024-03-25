@@ -175,6 +175,10 @@
           "tagType": "AtomicTag"
         },
         {
+          "name": "branch",
+          "tagType": "AtomicTag"
+        },
+        {
           "name": "commitMessage",
           "tagType": "AtomicTag"
         },
@@ -247,6 +251,19 @@
             },
             {
               "name": "add",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tprojectName \u003d system.tag.readBlocking(\"[.]Parameters.projectName\")[0].value\n\t\tvcs.git.branch()\n\t\tsystem.tag.writeBlocking(\"[.]branch\", False)\n\t\tsystem.tag.writeBlocking(\"[.]refreshLog\", True)"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "branch",
+              "value": false,
               "tagType": "AtomicTag"
             },
             {
