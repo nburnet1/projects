@@ -30,11 +30,6 @@
       ]
     },
     {
-      "valueSource": "memory",
-      "name": "vc_test_2",
-      "tagType": "AtomicTag"
-    },
-    {
       "valueSource": "expr",
       "expression": "now(1000)",
       "dataType": "DateTime",
@@ -92,6 +87,11 @@
           "tagType": "AtomicTag"
         }
       ]
+    },
+    {
+      "valueSource": "memory",
+      "name": "vc_test_2",
+      "tagType": "AtomicTag"
     },
     {
       "valueSource": "memory",
