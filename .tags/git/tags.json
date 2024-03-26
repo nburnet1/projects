@@ -14,7 +14,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "value": "On branch feature Your branch is up to date with \u0027origin/feature\u0027.  nothing to commit, working tree clean ",
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges to be committed:\n  (use \"git restore --staged \u003cfile\u003e...\" to unstage)\n\tmodified:   ignition/script-python/vcs/git/code.py\n\tmodified:   ignition/script-python/vcs/git/resource.json\n\n",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -254,7 +254,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "value": "* commit cd51fccfb0a7755c2e37553af302523e35403ffb\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 10:11:41 2024 -0400\n| \n|     testing\n| \n* commit 228fffc297e8fd8fcbf816eca9fb9af436319439\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 10:09:41 2024 -0400\n| \n|     Update git-commit.sh\n| \n* commit cb8b89c3b21cbeb1a8624c529ada9234db5f6437\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 10:09:28 2024 -0400\n| \n|     Update git-push.sh\n| \n* commit f954c8d60a453bb3e4d4c6c2dbea4727c966cdea\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 10:06:04 2024 -0400\n| \n|     modified tags\n| \n* commit 949c54efc16932f9684a04223d3eab1ee3fb9ee9\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 09:58:49 2024 -0400\n| \n|     testing git push\n| \n* commit 6892b26598297512ee727b1f9e05b2299dcdf2ae\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 09:52:51 2024 -0400\n| \n|     remove auto commit from projects\n| \n* commit 60fb28fc5f208c5b8f0271effa79b9cb740a6ab5\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 09:44:21 2024 -0400\n| \n|     Delete test.txt\n| \n* commit 0b08c52f3a71d45063d048fa4f7d721a64725ca1\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 09:42:35 2024 -0400\n| \n|     test commit\n| \n* commit 55c7fd9182456a68ae0e96e8d195309a6dfb4a5b\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 09:39:40 2024 -0400\n| \n|     Update git-push.sh\n| \n* commit 7a5176b6646dbc2bf5164b41584330c7eba9f1f3\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 09:39:05 2024 -0400\n| \n|     Update git-add.sh\n| \n* commit 7ddc8ebecb066e933ff45aade60541ab5a5df245\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 09:30:50 2024 -0400\n| \n|     Update git-log.sh\n| \n* commit cce4be7eddab7bd6facbb77969fb3048ae962190\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 09:26:51 2024 -0400\n| \n|     Update git-status.sh\n",
+          "value": "* commit bcaf6df2970478d075412a56888120fb3a1b511c | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 10:23:25 2024 -0400 |  |     modifying scripts |  * commit cd51fccfb0a7755c2e37553af302523e35403ffb | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 10:11:41 2024 -0400 |  |     testing |  * commit 228fffc297e8fd8fcbf816eca9fb9af436319439 | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 10:09:41 2024 -0400 |  |     Update git-commit.sh |  * commit cb8b89c3b21cbeb1a8624c529ada9234db5f6437 | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 10:09:28 2024 -0400 |  |     Update git-push.sh |  * commit f954c8d60a453bb3e4d4c6c2dbea4727c966cdea | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 10:06:04 2024 -0400 |  |     modified tags |  * commit 949c54efc16932f9684a04223d3eab1ee3fb9ee9 | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 09:58:49 2024 -0400 |  |     testing git push |  * commit 6892b26598297512ee727b1f9e05b2299dcdf2ae | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 09:52:51 2024 -0400 |  |     remove auto commit from projects |  * commit 60fb28fc5f208c5b8f0271effa79b9cb740a6ab5 | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 09:44:21 2024 -0400 |  |     Delete test.txt |  * commit 0b08c52f3a71d45063d048fa4f7d721a64725ca1 | Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e | Date:   Tue Mar 26 09:42:35 2024 -0400 |  |     test commit |  * commit 55c7fd9182456a68ae0e96e8d195309a6dfb4a5b | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 09:39:40 2024 -0400 |  |     Update git-push.sh |  * commit 7a5176b6646dbc2bf5164b41584330c7eba9f1f3 | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 09:39:05 2024 -0400 |  |     Update git-add.sh |  * commit 7ddc8ebecb066e933ff45aade60541ab5a5df245 | Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e | Date:   Tue Mar 26 09:30:50 2024 -0400 |  |     Update git-log.sh ",
           "name": "commitLog",
           "tagType": "AtomicTag"
         },
@@ -263,7 +263,7 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges not staged for commit:\n  (use \"git add \u003cfile\u003e...\" to update what will be committed)\n  (use \"git restore \u003cfile\u003e...\" to discard changes in working directory)\n\tmodified:   .tags/git/tags.json\n\tmodified:   Global/ignition/script-python/vcs/git/code.py\n\tmodified:   Global/ignition/script-python/vcs/git/resource.json\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
+          "value": "On branch feature Your branch is up to date with \u0027origin/feature\u0027.  nothing to commit, working tree clean ",
           "name": "log",
           "tagType": "AtomicTag"
         },
@@ -410,7 +410,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[.]commit\", \"[.]commitMessage\", \"[.]setCommitLog\"], \n\t\t\t[False, \"\", True]\n\t\t)"
+                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[.]commit\", \"[.]commitMessage\", \"[.]setCommitLog\", \"[.]status\"], \n\t\t\t[False, \"\", True, True]\n\t\t)"
                 }
               ],
               "dataType": "Boolean",
@@ -477,7 +477,7 @@
               "eventScripts": [
                 {
                   "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tvcs.git.push()\n\t\tsystem.tag.writeBlocking([\"[.]push\",\"[.]refreshLog\"], [False,True])"
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.push()\n\t\tsystem.tag.writeBlocking([\"[.]push\",\"[.]status\"], [False,True])"
                 }
               ],
               "dataType": "Boolean",
