@@ -3,6 +3,10 @@
     "/": {
       "viewPath": "testview"
     },
+    "/git": {
+      "title": "git",
+      "viewPath": "git"
+    },
     "/new-page": {
       "title": "",
       "viewPath": "view2"

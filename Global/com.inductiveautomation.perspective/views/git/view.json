@@ -1,0 +1,733 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "height": 1086,
+      "width": 1490
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "name": "header"
+            },
+            "position": {
+              "basis": "32px"
+            },
+            "props": {
+              "style": {
+                "padding": 10
+              },
+              "text": "Git",
+              "textStyle": {
+                "fontSize": "16pt"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "props": {
+                              "text": "Operations",
+                              "textStyle": {
+                                "fontSize": "14pt"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          }
+                        ],
+                        "meta": {
+                          "name": "title"
+                        },
+                        "position": {
+                          "basis": "58px"
+                        },
+                        "props": {
+                          "style": {
+                            "padding": 5
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "Label"
+                            },
+                            "propConfig": {
+                              "props.text": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "\"Selected Folder: \" + tag({/root.custom.tagProvider}+\"/Parameters/projectName\")"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "style": {
+                                "padding": 5
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "meta": {
+                              "name": "TagBrowseTree"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "root": {
+                                "path": "[git]"
+                              },
+                              "selection": {
+                                "mode": "single",
+                                "values": [
+                                  "[git]__root__"
+                                ]
+                              }
+                            },
+                            "type": "ia.display.tag-browse-tree"
+                          }
+                        ],
+                        "meta": {
+                          "name": "folderSelect"
+                        },
+                        "position": {
+                          "basis": "200px"
+                        },
+                        "props": {
+                          "direction": "column",
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomColor": "#d8d8d8",
+                            "borderBottomStyle": "hidden",
+                            "borderBottomWidth": 1,
+                            "borderLeftColor": "#d8d8d8",
+                            "borderLeftStyle": "solid",
+                            "borderLeftWidth": 1,
+                            "borderRightColor": "#d8d8d8",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": 1,
+                            "borderTopColor": "#d8d8d8",
+                            "borderTopLeftRadius": 6,
+                            "borderTopRightRadius": 6,
+                            "borderTopStyle": "solid",
+                            "borderTopWidth": 1,
+                            "padding": 3
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\ttag \u003d self.view.getChild(\"root\").custom.tagProvider + \"/add\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "add"
+                            },
+                            "position": {
+                              "basis": "64px"
+                            },
+                            "props": {
+                              "text": "Add"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "addDiv"
+                        },
+                        "position": {
+                          "basis": "48px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomColor": "#d8d8d8",
+                            "borderBottomStyle": "hidden",
+                            "borderBottomWidth": "1px",
+                            "borderLeftColor": "#d8d8d8",
+                            "borderLeftStyle": "solid",
+                            "borderLeftWidth": "1px",
+                            "borderRightColor": "#d8d8d8",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": "1px",
+                            "borderTopColor": "#d8d8d8",
+                            "borderTopStyle": "hidden",
+                            "borderTopWidth": "1px",
+                            "padding": 3
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "TextField"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "deferUpdates": false,
+                              "placeholder": "Commit Message",
+                              "style": {
+                                "margin": 3
+                              }
+                            },
+                            "type": "ia.input.text-field"
+                          }
+                        ],
+                        "meta": {
+                          "name": "commitMessageDiv"
+                        },
+                        "position": {
+                          "basis": "48px"
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomColor": "#d8d8d8",
+                            "borderBottomStyle": "hidden",
+                            "borderBottomWidth": "1px",
+                            "borderLeftColor": "#d8d8d8",
+                            "borderLeftStyle": "solid",
+                            "borderLeftWidth": "1px",
+                            "borderRightColor": "#d8d8d8",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": "1px",
+                            "borderTopColor": "#d8d8d8",
+                            "borderTopStyle": "hidden",
+                            "borderTopWidth": "1px"
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\trootTag \u003d self.view.getChild(\"root\").custom.tagProvider\n\tcommit \u003d rootTag + \"/commit\"\n\tcommitMessage \u003d rootTag + \"/commitMessage\"\n\tcommitMessageText \u003d self.parent.parent.getChild(\"commitMessageDiv\").getChild(\"TextField\").props.text\n\tsystem.tag.writeBlocking([commitMessage,commit], [commitMessageText,True])"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "commit"
+                            },
+                            "position": {
+                              "basis": "96px"
+                            },
+                            "propConfig": {
+                              "props.enabled": {
+                                "binding": {
+                                  "config": {
+                                    "expression": "len({.../commitMessageDiv/TextField.props.text}) \u003e 5"
+                                  },
+                                  "type": "expr"
+                                }
+                              }
+                            },
+                            "props": {
+                              "text": "Commit"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "commitDiv"
+                        },
+                        "position": {
+                          "basis": "48px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "flex-end",
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomColor": "#d8d8d8",
+                            "borderBottomStyle": "hidden",
+                            "borderBottomWidth": "1px",
+                            "borderLeftColor": "#d8d8d8",
+                            "borderLeftStyle": "solid",
+                            "borderLeftWidth": "1px",
+                            "borderRightColor": "#d8d8d8",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": "1px",
+                            "borderTopColor": "#d8d8d8",
+                            "borderTopStyle": "hidden",
+                            "borderTopWidth": "1px",
+                            "padding": 3
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "children": [
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\ttag \u003d self.view.getChild(\"root\").custom.tagProvider + \"/push\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "push"
+                            },
+                            "position": {
+                              "basis": "64px"
+                            },
+                            "props": {
+                              "text": "Push"
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "pushDiv"
+                        },
+                        "position": {
+                          "basis": "48px"
+                        },
+                        "props": {
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomColor": "#d8d8d8",
+                            "borderBottomLeftRadius": "6px",
+                            "borderBottomRightRadius": "6px",
+                            "borderBottomStyle": "solid",
+                            "borderBottomWidth": "1px",
+                            "borderLeftColor": "#d8d8d8",
+                            "borderLeftStyle": "solid",
+                            "borderLeftWidth": "1px",
+                            "borderRightColor": "#d8d8d8",
+                            "borderRightStyle": "solid",
+                            "borderRightWidth": "1px",
+                            "borderTopColor": "#d8d8d8",
+                            "borderTopStyle": "hidden",
+                            "borderTopWidth": "1px",
+                            "padding": 3
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "controls"
+                    },
+                    "position": {
+                      "basis": "25%",
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "padding": "5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "logs"
+                            },
+                            "props": {
+                              "text": "Logs",
+                              "textStyle": {
+                                "fontSize": "14pt"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "children": [
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\ttag \u003d \"[git]__root__/branch\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "branchButton"
+                                },
+                                "position": {
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "text": "Branch"
+                                },
+                                "type": "ia.input.button"
+                              },
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\ttag \u003d self.view.getChild(\"root\").custom.tagProvider + \"/status\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "statusButton"
+                                },
+                                "position": {
+                                  "basis": "64px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "text": "Status"
+                                },
+                                "type": "ia.input.button"
+                              },
+                              {
+                                "events": {
+                                  "component": {
+                                    "onActionPerformed": {
+                                      "config": {
+                                        "script": "\ttag \u003d self.view.getChild(\"root\").custom.tagProvider + \"/refreshLog\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                      },
+                                      "scope": "G",
+                                      "type": "script"
+                                    }
+                                  }
+                                },
+                                "meta": {
+                                  "name": "refresh"
+                                },
+                                "position": {
+                                  "basis": "48px",
+                                  "shrink": 0
+                                },
+                                "props": {
+                                  "image": {
+                                    "icon": {
+                                      "path": "material/refresh"
+                                    }
+                                  },
+                                  "primary": false,
+                                  "text": ""
+                                },
+                                "type": "ia.input.button"
+                              }
+                            ],
+                            "meta": {
+                              "name": "controlDiv"
+                            },
+                            "position": {
+                              "grow": 1
+                            },
+                            "props": {
+                              "justify": "flex-end"
+                            },
+                            "type": "ia.container.flex"
+                          }
+                        ],
+                        "meta": {
+                          "name": "statusControls"
+                        },
+                        "position": {
+                          "basis": "58px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "space-between",
+                          "style": {
+                            "padding": 5
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "status"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.source": {
+                            "binding": {
+                              "config": {
+                                "expression": "\"```\\n\"+tag({/root.custom.tagProvider}+\"/log\")"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "markdown": {
+                            "skipHtml": true
+                          },
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomLeftRadius": 6,
+                            "borderBottomRightRadius": 6,
+                            "borderColor": "#d8d8d8",
+                            "borderStyle": "solid",
+                            "borderTopLeftRadius": 6,
+                            "borderTopRightRadius": 6,
+                            "borderWidth": "1px",
+                            "padding": 5
+                          }
+                        },
+                        "type": "ia.display.markdown"
+                      },
+                      {
+                        "meta": {
+                          "name": "FlexContainer"
+                        },
+                        "position": {
+                          "basis": "20%",
+                          "shrink": 0
+                        },
+                        "type": "ia.container.flex"
+                      }
+                    ],
+                    "meta": {
+                      "name": "statusDiv"
+                    },
+                    "position": {
+                      "basis": "45%",
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "padding": 5
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "meta": {
+                              "name": "commitHistory"
+                            },
+                            "props": {
+                              "text": "Commit History",
+                              "textStyle": {
+                                "fontSize": "14pt"
+                              }
+                            },
+                            "type": "ia.display.label"
+                          },
+                          {
+                            "events": {
+                              "component": {
+                                "onActionPerformed": {
+                                  "config": {
+                                    "script": "\ttag \u003d \"[git]__root__/setCommitLog\"\n\tsystem.tag.writeBlocking(tag, True)"
+                                  },
+                                  "scope": "G",
+                                  "type": "script"
+                                }
+                              }
+                            },
+                            "meta": {
+                              "name": "refresh"
+                            },
+                            "position": {
+                              "basis": "48px",
+                              "shrink": 0
+                            },
+                            "props": {
+                              "image": {
+                                "icon": {
+                                  "path": "material/refresh"
+                                }
+                              },
+                              "primary": false,
+                              "text": ""
+                            },
+                            "type": "ia.input.button"
+                          }
+                        ],
+                        "meta": {
+                          "name": "historyControls"
+                        },
+                        "position": {
+                          "basis": "58px",
+                          "shrink": 0
+                        },
+                        "props": {
+                          "justify": "space-between",
+                          "style": {
+                            "padding": 5
+                          }
+                        },
+                        "type": "ia.container.flex"
+                      },
+                      {
+                        "meta": {
+                          "name": "history"
+                        },
+                        "position": {
+                          "grow": 1
+                        },
+                        "propConfig": {
+                          "props.source": {
+                            "binding": {
+                              "config": {
+                                "expression": "\"```\\n\" + \r\n{[git]__root__/commitLog}"
+                              },
+                              "type": "expr"
+                            }
+                          }
+                        },
+                        "props": {
+                          "markdown": {
+                            "skipHtml": true
+                          },
+                          "style": {
+                            "backgroundColor": "#f2f2f2",
+                            "borderBottomLeftRadius": "6px",
+                            "borderBottomRightRadius": "6px",
+                            "borderColor": "#d8d8d8",
+                            "borderStyle": "solid",
+                            "borderTopLeftRadius": "6px",
+                            "borderTopRightRadius": "6px",
+                            "borderWidth": "1px",
+                            "overflowY": "scroll",
+                            "padding": 5
+                          }
+                        },
+                        "type": "ia.display.markdown"
+                      }
+                    ],
+                    "meta": {
+                      "name": "historyDiv"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "props": {
+                      "direction": "column",
+                      "style": {
+                        "padding": "5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "name": "focus"
+                },
+                "position": {
+                  "grow": 1
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "name": "body"
+            },
+            "position": {
+              "basis": "100%",
+              "grow": 1
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "padding": 5
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "name": "FlexContainer"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column"
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.tagProvider": {
+        "binding": {
+          "config": {
+            "path": "./FlexContainer/body/focus/controls/folderSelect/TagBrowseTree.props.selection.values[0]"
+          },
+          "transforms": [
+            {
+              "expression": "split({value}, \"/\")[0]\r\n",
+              "type": "expression"
+            }
+          ],
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "#e5e5e5"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}
