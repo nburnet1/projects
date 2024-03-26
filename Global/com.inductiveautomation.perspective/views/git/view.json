@@ -264,7 +264,7 @@
                               "component": {
                                 "onActionPerformed": {
                                   "config": {
-                                    "script": "\trootTag \u003d \"[git]__root__\"\n\tcommit \u003d rootTag + \"/commit\"\n\tcommitMessage \u003d rootTag + \"/commitMessage\"\n\tcommitMessageText \u003d self.parent.parent.getChild(\"commitMessageDiv\").getChild(\"TextField\").props.text\n\tsystem.tag.writeBlocking([commitMessage,commit], [commitMessageText,True])"
+                                    "script": "\trootTag \u003d \"[git]__root__\"\n\tcommit \u003d rootTag + \"/commit\"\n\tcommitMessage \u003d rootTag + \"/commitMessage\"\n\tcommitMessageText \u003d self.parent.parent.getChild(\"commitMessageDiv\").getChild(\"TextField\").props.text\n\tsystem.tag.writeBlocking([commitMessage,commit], [commitMessageText,True])\n\tself.parent.parent.getChild(\"commitMessageDiv\").getChild(\"TextField\").props.text \u003d \"\""
                                   },
                                   "scope": "G",
                                   "type": "script"
