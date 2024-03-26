@@ -52,7 +52,7 @@ def push():
 		Shell equivalent:
 			git push
 	"""
-	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-branch.sh"])
+	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-push.sh"])
 
 def status(projectName):
 	"""Gets the status of the repo. Shows changes, stages, commits.
