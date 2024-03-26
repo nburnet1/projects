@@ -428,6 +428,9 @@
                                   "shrink": 0
                                 },
                                 "props": {
+                                  "style": {
+                                    "marginRight": 3
+                                  },
                                   "text": "Branch"
                                 },
                                 "type": "ia.input.button"
@@ -452,6 +455,9 @@
                                   "shrink": 0
                                 },
                                 "props": {
+                                  "style": {
+                                    "marginRight": 3
+                                  },
                                   "text": "Status"
                                 },
                                 "type": "ia.input.button"
