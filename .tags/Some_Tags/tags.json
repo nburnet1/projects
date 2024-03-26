@@ -124,6 +124,13 @@
       "tagType": "AtomicTag"
     },
     {
+      "valueSource": "memory",
+      "dataType": "String",
+      "name": "verDir",
+      "value": "[\u0027Global\u0027, \u0027git.log\u0027, \u0027.backups\u0027, \u0027.tags\u0027, \u0027jupyter\u0027, \u0027testUI\u0027, \u0027.scripts\u0027, \u0027testProj\u0027, \u0027README.md\u0027, \u0027_InitContainer\u0027]",
+      "tagType": "AtomicTag"
+    },
+    {
       "name": "Testa",
       "tagType": "Folder",
       "tags": [
@@ -327,6 +334,19 @@
           ]
         }
       ]
+    },
+    {
+      "valueSource": "memory",
+      "eventScripts": [
+        {
+          "eventid": "valueChanged",
+          "script": "\tdirectories \u003d vcs.git.getVersionedDirectories()\n\tsystem.tag.writeBlocking(\"[Some_Tags]verDir\", str(directories))"
+        }
+      ],
+      "dataType": "Boolean",
+      "name": "New Tag",
+      "value": false,
+      "tagType": "AtomicTag"
     }
   ]
 }

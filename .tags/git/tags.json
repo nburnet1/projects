@@ -3,64 +3,6 @@
   "tagType": "Provider",
   "tags": [
     {
-      "name": "testProj",
-      "typeId": "GitCommands",
-      "parameters": {
-        "projectName": {
-          "dataType": "String",
-          "value": "testProj"
-        }
-      },
-      "tagType": "UdtInstance",
-      "tags": [
-        {
-          "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "log",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "add",
-          "tagType": "AtomicTag"
-        }
-      ]
-    },
-    {
-      "name": "tags",
-      "typeId": "GitCommands",
-      "parameters": {
-        "projectName": {
-          "dataType": "String",
-          "value": ".tags"
-        }
-      },
-      "tagType": "UdtInstance",
-      "tags": [
-        {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "status",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "log",
-          "tagType": "AtomicTag"
-        }
-      ]
-    },
-    {
       "name": "jupyter",
       "typeId": "GitCommands",
       "parameters": {
@@ -72,6 +14,10 @@
       "tagType": "UdtInstance",
       "tags": [
         {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
           "name": "status",
           "tagType": "AtomicTag"
         },
@@ -82,20 +28,16 @@
         {
           "name": "refreshLog",
           "tagType": "AtomicTag"
-        },
-        {
-          "name": "add",
-          "tagType": "AtomicTag"
         }
       ]
     },
     {
-      "name": "_InitContainer",
+      "name": "testUI",
       "typeId": "GitCommands",
       "parameters": {
         "projectName": {
           "dataType": "String",
-          "value": "_InitContainer"
+          "value": "testUI"
         }
       },
       "tagType": "UdtInstance",
@@ -109,11 +51,11 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "refreshLog",
+          "name": "status",
           "tagType": "AtomicTag"
         },
         {
-          "name": "status",
+          "name": "refreshLog",
           "tagType": "AtomicTag"
         }
       ]
@@ -130,7 +72,7 @@
       "tagType": "UdtInstance",
       "tags": [
         {
-          "name": "status",
+          "name": "refreshLog",
           "tagType": "AtomicTag"
         },
         {
@@ -138,34 +80,28 @@
           "tagType": "AtomicTag"
         },
         {
-          "name": "log",
+          "name": "status",
           "tagType": "AtomicTag"
         },
         {
-          "name": "refreshLog",
+          "name": "log",
           "tagType": "AtomicTag"
         }
       ]
     },
     {
-      "name": "__root__",
-      "typeId": "RootCommands",
+      "name": "_InitContainer",
+      "typeId": "GitCommands",
       "parameters": {
         "projectName": {
           "dataType": "String",
-          "value": "."
+          "value": "_InitContainer"
         }
       },
       "tagType": "UdtInstance",
       "tags": [
         {
-          "value": "On branch feature Your branch is up to date with \u0027origin/feature\u0027.  Changes not staged for commit:   (use \"git add \u003cfile\u003e...\" to update what will be committed)   (use \"git restore \u003cfile\u003e...\" to discard changes in working directory) \tmodified:   .tags/Some_Tags/tags.json \tmodified:   .tags/git/tags.json  no changes added to commit (use \"git add\" and/or \"git commit -a\") ",
-          "name": "log",
-          "tagType": "AtomicTag"
-        },
-        {
-          "value": false,
-          "name": "refreshCommitLog",
+          "name": "refreshLog",
           "tagType": "AtomicTag"
         },
         {
@@ -173,45 +109,40 @@
           "tagType": "AtomicTag"
         },
         {
-          "value": false,
-          "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "value": false,
-          "name": "branch",
-          "tagType": "AtomicTag"
-        },
-        {
-          "value": false,
-          "name": "setCommitLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "value": false,
           "name": "status",
           "tagType": "AtomicTag"
         },
         {
-          "name": "push",
+          "name": "log",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "testProj",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "testProj"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "log",
           "tagType": "AtomicTag"
         },
         {
-          "value": true,
-          "name": "exportTags",
+          "name": "refreshLog",
           "tagType": "AtomicTag"
         },
         {
-          "name": "commit",
+          "name": "add",
           "tagType": "AtomicTag"
         },
         {
-          "name": "commitMessage",
-          "tagType": "AtomicTag"
-        },
-        {
-          "value": "* commit 017da10603551db6996f4010963305386100bff5\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 15:45:11 2024 -0400\n| \n|     Removing root\n| \n* commit 1e25f9ba9bc2fd8eebdc0c881cbe78a9803b59a1\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:46:29 2024 -0400\n| \n|     Final commit\n| \n* commit cb093b5b26a46a7dc59e91f93de105d378e9e390\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:31:25 2024 -0400\n| \n|     Some more testing\n| \n* commit eb0c01058633ef071dc5474704f1f84cd6a7a000\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:27:58 2024 -0400\n| \n|     Testing some more\n| \n* commit d31dcb19b4b702f849566040e184bbf8beec696e\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:22:23 2024 -0400\n| \n|     Testing some more\n| \n* commit 92fd8052610c948aba3bcdbf8fc6d6c5854b7805\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:20:06 2024 -0400\n| \n|     continuing to test\n| \n* commit 5d55012512d0e9dd88c684f9b2e1bbd8ffa551e2\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 13:06:16 2024 -0400\n| \n|     Testing screen\n| \n* commit f45a887891e1eb7dffbfe034e1fc3659060be9df\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 10:27:04 2024 -0400\n| \n|     Modified push member\n| \n* commit bcaf6df2970478d075412a56888120fb3a1b511c\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 10:23:25 2024 -0400\n| \n|     modifying scripts\n| \n* commit cd51fccfb0a7755c2e37553af302523e35403ffb\n| Author: nburnet1 \u003cnoah.burnette@intellicintegration.com\u003e\n| Date:   Tue Mar 26 10:11:41 2024 -0400\n| \n|     testing\n| \n* commit 228fffc297e8fd8fcbf816eca9fb9af436319439\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 10:09:41 2024 -0400\n| \n|     Update git-commit.sh\n| \n* commit cb8b89c3b21cbeb1a8624c529ada9234db5f6437\n| Author: Noah Burnette \u003c80188246+nburnet1@users.noreply.github.com\u003e\n| Date:   Tue Mar 26 10:09:28 2024 -0400\n| \n|     Update git-push.sh\n",
-          "name": "commitLog",
+          "name": "status",
           "tagType": "AtomicTag"
         }
       ]
@@ -246,38 +177,123 @@
       ]
     },
     {
-      "name": "testUI",
-      "typeId": "GitCommands",
-      "parameters": {
-        "projectName": {
-          "dataType": "String",
-          "value": "testUI"
-        }
-      },
-      "tagType": "UdtInstance",
-      "tags": [
-        {
-          "name": "log",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "add",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "refreshLog",
-          "tagType": "AtomicTag"
-        },
-        {
-          "name": "status",
-          "tagType": "AtomicTag"
-        }
-      ]
-    },
-    {
       "name": "_types_",
       "tagType": "Folder",
       "tags": [
+        {
+          "name": "RootCommands",
+          "typeId": "GitCommands",
+          "tagType": "UdtType",
+          "tags": [
+            {
+              "name": "refreshLog",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.exportTags()\n\t\tsystem.tag.writeBlocking([\"[.]exportTags\", \"[.]status\"], [False,True])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "exportTags",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.setCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]setCommitLog\", \"[.]refreshCommitLog\"], [False, True])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "setCommitLog",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.branch()\n\t\tsystem.tag.writeBlocking([\"[.]branch\",\"[.]refreshLog\"], [False,True])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "branch",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[.]commit\", \"[.]commitMessage\", \"[.]setCommitLog\", \"[.]status\"], \n\t\t\t[False, \"\", True, True]\n\t\t)"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "commit",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "commitLog",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "log",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "add",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "status",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tvcs.git.push()\n\t\tsystem.tag.writeBlocking([\"[.]push\",\"[.]status\"], [False,True])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "push",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.getCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]commitLog\", \"[.]refreshCommitLog\"], [logString, False])"
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "refreshCommitLog",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "String",
+              "name": "commitMessage",
+              "value": "",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
         {
           "name": "GitCommands",
           "parameters": {
@@ -333,120 +349,71 @@
               "tagType": "AtomicTag"
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "__root__",
+      "typeId": "RootCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "."
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "commitMessage",
+          "tagType": "AtomicTag"
         },
         {
-          "name": "RootCommands",
-          "typeId": "GitCommands",
-          "tagType": "UdtType",
-          "tags": [
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tvcs.git.exportTags()\n\t\tsystem.tag.writeBlocking([\"[.]exportTags\", \"[.]status\"], [False,True])"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "exportTags",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "commitLog",
-              "tagType": "AtomicTag"
-            },
-            {
-              "name": "refreshLog",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.setCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]setCommitLog\", \"[.]refreshCommitLog\"], [False, True])"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "setCommitLog",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tlogString \u003d vcs.git.getCommitLog()\n\t\tsystem.tag.writeBlocking([\"[.]commitLog\", \"[.]refreshCommitLog\"], [logString, False])"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "refreshCommitLog",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "name": "add",
-              "tagType": "AtomicTag"
-            },
-            {
-              "name": "status",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "dataType": "String",
-              "name": "commitMessage",
-              "value": "",
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tvcs.git.push()\n\t\tsystem.tag.writeBlocking([\"[.]push\",\"[.]status\"], [False,True])"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "push",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tvcs.git.branch()\n\t\tsystem.tag.writeBlocking([\"[.]branch\",\"[.]refreshLog\"], [False,True])"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "branch",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "valueSource": "memory",
-              "eventScripts": [
-                {
-                  "eventid": "valueChanged",
-                  "script": "\tif currentValue.value:\n\t\tcommitMessage \u003d system.tag.readBlocking(\"[.]commitMessage\")[0].value\n\t\tvcs.git.commitTest(commitMessage)\n\t\tsystem.tag.writeBlocking(\n\t\t\t[\"[.]commit\", \"[.]commitMessage\", \"[.]setCommitLog\", \"[.]status\"], \n\t\t\t[False, \"\", True, True]\n\t\t)"
-                }
-              ],
-              "dataType": "Boolean",
-              "name": "commit",
-              "value": false,
-              "tagType": "AtomicTag"
-            },
-            {
-              "name": "log",
-              "tagType": "AtomicTag"
-            }
-          ]
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges not staged for commit:\n  (use \"git add \u003cfile\u003e...\" to update what will be committed)\n  (use \"git restore \u003cfile\u003e...\" to discard changes in working directory)\n\tmodified:   .tags/git/tags.json\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commitLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": true,
+          "name": "exportTags",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "commit",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "setCommitLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "branch",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "refreshCommitLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "push",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "status",
+          "tagType": "AtomicTag"
         }
       ]
     },
@@ -457,6 +424,66 @@
         "projectName": {
           "dataType": "String",
           "value": ".scripts"
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "log",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": "."
+        }
+      },
+      "tagType": "UdtInstance",
+      "tags": [
+        {
+          "name": "status",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": "On branch feature\nYour branch is up to date with \u0027origin/feature\u0027.\n\nChanges not staged for commit:\n  (use \"git add \u003cfile\u003e...\" to update what will be committed)\n  (use \"git restore \u003cfile\u003e...\" to discard changes in working directory)\n\tmodified:   .scripts/git-status.sh\n\nUntracked files:\n  (use \"git add \u003cfile\u003e...\" to include in what will be committed)\n\tgit.log\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n",
+          "name": "log",
+          "tagType": "AtomicTag"
+        },
+        {
+          "name": "add",
+          "tagType": "AtomicTag"
+        },
+        {
+          "value": false,
+          "name": "refreshLog",
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "tags",
+      "typeId": "GitCommands",
+      "parameters": {
+        "projectName": {
+          "dataType": "String",
+          "value": ".tags"
         }
       },
       "tagType": "UdtInstance",
