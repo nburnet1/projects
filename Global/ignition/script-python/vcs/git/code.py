@@ -33,8 +33,6 @@ def add(projectName):
 	"""
 	
 	# This indicates a reserved project name called '.tags.' Will export tags to be versioned
-	if projectName == ".tags":
-		exportTags()
 		
 	system.util.execute(["/usr/local/bin/ignition/data/projects/.scripts/git-add.sh", projectName])
 
